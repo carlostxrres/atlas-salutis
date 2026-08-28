@@ -1,0 +1,20 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+import InterviewsSearch, { type InterviewSummary } from '@/components/InterviewsSearch';
+
+const interviews = await getCollection('interviews');
+const summaries: InterviewSummary[] = interviews
+  .map((interview) => ({
+    id: interview.id,
+    title: interview.data.title,
+    channel: interview.data.channel,
+    date: interview.data.date.toISOString().slice(0, 10),
+    summary: interview.data.summary,
+  }))
+  .sort((a, b) => b.date.localeCompare(a.date));
+---
+
+<StarlightPage frontmatter={{ title: 'Entrevistas' }}>
+  <InterviewsSearch interviews={summaries} client:load />
+</StarlightPage>

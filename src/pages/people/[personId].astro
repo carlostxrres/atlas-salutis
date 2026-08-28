@@ -1,0 +1,52 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection, render } from 'astro:content';
+import { getPostsForPerson, getPersonReferenceCount, getInterviewsForPerson } from '@/lib/xref';
+
+export async function getStaticPaths() {
+  const people = await getCollection('people');
+  return people.map((person) => ({ params: { personId: person.id }, props: { person } }));
+}
+
+const { person } = Astro.props;
+const { Content } = await render(person);
+
+const [posts, referenceCount, interviews] = await Promise.all([
+  getPostsForPerson(person.id),
+  getPersonReferenceCount(person.id),
+  getInterviewsForPerson(person.id),
+]);
+---
+
+<StarlightPage frontmatter={{ title: person.data.name, description: person.data.profession }}>
+  <p>{person.data.profession}</p>
+  <Content />
+
+  {person.data.links && (
+    <ul>
+      {person.data.links.website && (
+        <li><a href={person.data.links.website}>Sitio web</a></li>
+      )}
+      {person.data.links.youtube && (
+        <li><a href={person.data.links.youtube}>YouTube</a></li>
+      )}
+      {person.data.links.instagram && (
+        <li><a href={person.data.links.instagram}>Instagram</a></li>
+      )}
+    </ul>
+  )}
+
+  <h2>Entrevistas ({interviews.length})</h2>
+  <ul>
+    {interviews.map((interview) => (
+      <li><a href={`/interviews/${interview.id}/`}>{interview.data.title}</a></li>
+    ))}
+  </ul>
+
+  <h2>Posts que le referencian ({posts.length}, {referenceCount} citas en total)</h2>
+  <ul>
+    {posts.map((post) => (
+      <li><a href={`/${post.id}/`}>{post.data.title}</a></li>
+    ))}
+  </ul>
+</StarlightPage>

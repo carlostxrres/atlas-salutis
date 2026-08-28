@@ -1,0 +1,45 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection, getEntries } from 'astro:content';
+
+export async function getStaticPaths() {
+  const interviews = await getCollection('interviews');
+  return interviews.map((interview) => ({
+    params: { interviewId: interview.id },
+    props: { interview },
+  }));
+}
+
+const { interview } = Astro.props;
+const [interviewees, interviewers] = await Promise.all([
+  getEntries(interview.data.interviewees),
+  getEntries(interview.data.interviewers),
+]);
+---
+
+<StarlightPage frontmatter={{ title: interview.data.title, description: interview.data.summary }}>
+  <p>
+    <strong>Canal:</strong> {interview.data.channel} ·
+    <strong>Fecha:</strong> {interview.data.date.toISOString().slice(0, 10)}
+    {interview.data.durationMinutes && <> · <strong>Duración:</strong> {interview.data.durationMinutes} min</>}
+  </p>
+
+  <p><a href={interview.data.youtubeUrl}>Ver en YouTube</a></p>
+
+  <h2>Entrevistados/as</h2>
+  <ul>
+    {interviewees.map((person) => (
+      <li><a href={`/people/${person.id}/`}>{person.data.name}</a></li>
+    ))}
+  </ul>
+
+  <h2>Entrevistadores/as</h2>
+  <ul>
+    {interviewers.map((person) => (
+      <li><a href={`/people/${person.id}/`}>{person.data.name}</a></li>
+    ))}
+  </ul>
+
+  <h2>Resumen</h2>
+  <p>{interview.data.summary}</p>
+</StarlightPage>
