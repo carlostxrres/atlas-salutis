@@ -1,0 +1,36 @@
+---
+import { getEntry, type CollectionEntry } from 'astro:content';
+import SourcePopoverIsland, { type ResolvedSource } from './SourcePopoverIsland';
+
+type PostSource = CollectionEntry<'docs'>['data']['sources'][number];
+
+interface Props {
+  // ids of the sources (within this post's frontmatter `sources[]`) that back
+  // the statement this component is attached to.
+  ids: string[];
+  sources: PostSource[];
+}
+
+const { ids, sources } = Astro.props;
+const matched = sources.filter((source) => ids.includes(source.id));
+
+const resolved: ResolvedSource[] = await Promise.all(
+  matched.map(async (source) => {
+    const interview = await getEntry('interviews', source.interview);
+    const people = await Promise.all(source.personIds.map((id) => getEntry('people', id)));
+    if (!interview) throw new Error(`Unknown interview id in sources: ${source.interview}`);
+    return {
+      id: source.id,
+      interviewId: interview.id,
+      interviewTitle: interview.data.title,
+      people: people
+        .filter((person) => person !== undefined)
+        .map((person) => ({ id: person.id, name: person.data.name })),
+      quote: source.quote,
+      timestamp: source.timestamp,
+    };
+  }),
+);
+---
+
+<SourcePopoverIsland sources={resolved} client:visible />
