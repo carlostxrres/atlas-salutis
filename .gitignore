@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# scratch output from scripts/fetch-transcript.ts (fetched transcripts, never committed)
+tmp/
+
 # astro-d2 generated diagrams (regenerated at build/dev time from the `d2` fences in content)
 public/d2/
 

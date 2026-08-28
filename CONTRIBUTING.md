@@ -52,3 +52,22 @@ carpeta de post, hacer el `git mv` en su propio commit (`content(reorg): ...`),
 separado de cualquier edición de contenido en el mismo post. Así la detección
 de renombrados de git funciona de forma fiable y los diffs se mantienen
 legibles.
+
+## Pipeline de ingesta de entrevistas
+
+`scripts/fetch-transcript.ts` (usado por la skill `.claude/skills/ingest-interview/`)
+requiere `yt-dlp` instalado localmente y acceso de red a YouTube — ninguna de
+las dos cosas está disponible en una sesión en la nube con política de red
+restringida, así que la lógica de parseo/limpieza de subtítulos se valida con
+`pnpm test:transcript` (fixtures locales, sin red), y el flujo completo se
+prueba manualmente en local:
+
+```bash
+pnpm exec tsx scripts/fetch-transcript.ts <url-de-youtube-real>
+# inspeccionar tmp/ingest/<videoId>/meta.json y transcript.txt
+
+# luego, en una sesión de Claude Code con la skill cargada:
+/ingest-interview <url-de-youtube-real>
+# revisar el diff/commits resultantes antes de hacer push (o `git reset` si
+# solo era una prueba)
+```

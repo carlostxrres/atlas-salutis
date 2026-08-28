@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "transcript:fetch": "tsx scripts/fetch-transcript.ts",
+    "test:transcript": "tsx --test scripts/transcript/__tests__/*.test.ts"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "astro-d2": "^0.13.1",
+    "tsx": "^4.23.12",
     "typescript": "^5.9.3"
   }
 }
