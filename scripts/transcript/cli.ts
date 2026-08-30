@@ -90,18 +90,28 @@ function fetchMetadataJson(youtubeUrl: string): any {
   }
 }
 
-function pickCaptionTrack(
+// Pseudo-tracks YouTube lists alongside real subtitles but which are not
+// transcripts. `live_chat` is the live-chat replay of a past stream: it only
+// exists as JSON, so selecting it downloads no .vtt and aborts the run — and
+// because it lands in `subtitles` (not `automatic_captions`), the
+// any-manual-track fallback below used to prefer it over perfectly good
+// automatic captions.
+const NON_SUBTITLE_TRACKS = new Set(['live_chat']);
+
+export function pickCaptionTrack(
   manualLangs: string[],
   autoLangs: string[],
   langHint: string | undefined,
 ): { source: 'manual' | 'auto'; lang: string } | null {
+  const manual = manualLangs.filter((lang) => !NON_SUBTITLE_TRACKS.has(lang));
+  const auto = autoLangs.filter((lang) => !NON_SUBTITLE_TRACKS.has(lang));
   const priority = [langHint, 'es', 'en'].filter((lang): lang is string => Boolean(lang));
 
-  for (const lang of priority) if (manualLangs.includes(lang)) return { source: 'manual', lang };
-  if (manualLangs.length > 0) return { source: 'manual', lang: [...manualLangs].sort()[0]! };
+  for (const lang of priority) if (manual.includes(lang)) return { source: 'manual', lang };
+  if (manual.length > 0) return { source: 'manual', lang: [...manual].sort()[0]! };
 
-  for (const lang of priority) if (autoLangs.includes(lang)) return { source: 'auto', lang };
-  if (autoLangs.length > 0) return { source: 'auto', lang: [...autoLangs].sort()[0]! };
+  for (const lang of priority) if (auto.includes(lang)) return { source: 'auto', lang };
+  if (auto.length > 0) return { source: 'auto', lang: [...auto].sort()[0]! };
 
   return null;
 }
