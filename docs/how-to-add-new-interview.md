@@ -43,13 +43,28 @@ con los commits de contenido.
 
 ### Paso 2 — Lanzar la skill
 
-En una sesión de Claude Code, en la raíz del repo:
+> **`/ingest-interview` no es un comando de terminal.** Es un comando de
+> Claude Code y se escribe dentro de su prompt. Si lo pegas en bash obtendrás
+> `bash: /ingest-interview: No such file or directory`.
 
+Primero abre Claude Code en la raíz del repo (esto sí es terminal):
+
+```bash
+cd ~/Desktop/atlas-salutis
+claude
 ```
-/ingest-interview https://www.youtube.com/watch?v=VIDEO_ID
+
+Y ya dentro de Claude Code, en su prompt, escribe:
+
+```text
+> /ingest-interview https://www.youtube.com/watch?v=VIDEO_ID
 ```
 
 Valen las formas `watch?v=`, `youtu.be/` y `/shorts/`.
+
+Al teclear `/` aparece la lista de comandos disponibles; si `ingest-interview`
+no está en ella, Claude Code no ha cargado la skill: comprueba que lo has
+abierto en la raíz del repo, donde está `.claude/skills/`.
 
 ### Paso 3 — Qué ocurre por dentro
 
