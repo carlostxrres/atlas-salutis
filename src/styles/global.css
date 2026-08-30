@@ -1,1 +1,5 @@
 @import 'tailwindcss';
+
+[data-d2-version] {
+  max-height: 80dvh;
+}
