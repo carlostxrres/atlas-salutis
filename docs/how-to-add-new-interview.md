@@ -66,6 +66,21 @@ Al teclear `/` aparece la lista de comandos disponibles; si `ingest-interview`
 no está en ella, Claude Code no ha cargado la skill: comprueba que lo has
 abierto en la raíz del repo, donde está `.claude/skills/`.
 
+### Qué modo usar
+
+Usa el **modo automático**. Es la opción adecuada para cualquier ingesta, por
+tres razones:
+
+- **La skill ya es el plan.** El modo plan devuelve una propuesta que tienes
+  que aprobar antes de que se escriba nada, así que solo añade una vuelta
+  extra: los pasos ya están fijados en la propia skill.
+- **El riesgo es bajo por diseño.** No hay push, no se escribe nada fuera del
+  repositorio y todo queda en commits locales que revisas antes de publicar.
+  Si el resultado no convence, se deshace entero (apartado 3).
+- **El volumen no deja alternativa.** Una entrevista de dos horas genera
+  decenas de escrituras de archivo y una decena de commits; aprobarlos uno a
+  uno no aporta ningún control real.
+
 ### Paso 3 — Qué ocurre por dentro
 
 1. **Canonicaliza la URL** y comprueba si ese vídeo ya está ingerido
