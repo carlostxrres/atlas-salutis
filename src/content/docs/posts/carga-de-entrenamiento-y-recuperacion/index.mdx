@@ -48,6 +48,31 @@ sources:
     personIds: [sebastian-la-rosa]
     quote: "Hoy me levanté con bajos valores de variabilidad de la frecuencia cardíaca, no me esfuerzo de más para no generar daño no recuperable y que después en tres días de hacer lo mismo me enferme. Es central, porque regula hasta dónde yo puedo y hasta dónde no."
     timestamp: "01:28:28"
+  - id: src-hernandez-carga-1
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "El HRV nos indica los milisegundos que existen entre los latidos cardíacos y es un signo indirecto megasensible de cómo está funcionando el sistema nervioso vegetativo."
+    timestamp: "02:11:35"
+  - id: src-hernandez-carga-2
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Nos hemos acostumbrado a ver personas en posición de loto meditando y asumimos que eso es lo sano. Eso no es una persona sana. Una persona sana es aquella que tiene una variabilidad muy alta, la capacidad de pasar de estar muy relajados a ser animales."
+    timestamp: "02:12:36"
+  - id: src-hernandez-carga-3
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Deportistas profesionales muy jóvenes, de 19, 20 años, los he llegado a ver a 200, 210. A partir de los 25, 26 años se empieza a desplomar: 140, 120. Tíos de primera división con 30 años andan en 80, 90. Y hombres maduros que hagan deporte, entre 45 y 60."
+    timestamp: "02:14:08"
+  - id: src-hernandez-carga-4
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Lo importante no es tanto cómo lo tengas, sino qué ocurre en cuestión de pocos días. Si te baja un 20% de tu línea basal, significa que tu capacidad para enfrentarte al estrés se ha ido al traste."
+    timestamp: "02:14:39"
+  - id: src-hernandez-carga-5
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Ese día entrenar, aunque tú creas que te viene bien para liberar endorfinas, no es lo más correcto. Y ese día, aunque no tengas carbos en tu dieta, mejor mete carbos, porque te va a elevar la insulina y tu musculatura va a estar más protegida."
+    timestamp: "02:15:10"
 ---
 
 import SourcePopover from '../../../../components/SourcePopover.astro';
@@ -119,10 +144,39 @@ refleja el equilibrio entre sistema nervioso simpático y parasimpático. Cuando
 uno se excede, la HRV baja de forma inevitable
 <SourcePopover ids={["src-larosa-carga-8"]} sources={frontmatter.sources} />.
 
+Antonio Hernández describe la misma métrica en los mismos términos —los
+milisegundos entre latidos como ventana al sistema nervioso vegetativo
+<SourcePopover ids={["src-larosa-carga-8", "src-hernandez-carga-1"]} sources={frontmatter.sources} />—
+y añade una corrección conceptual: la salud no es estar permanentemente
+relajado. Una persona sana es la que tiene *mucha* variabilidad, capaz de
+pasar de la calma a la activación extrema y volver enseguida
+<SourcePopover ids={["src-hernandez-carga-2"]} sources={frontmatter.sources} />.
+
 Su uso práctico es diario y sencillo: si la HRV amanece baja, ese día no se
 fuerza. Sirve para evitar acumular daño no recuperable y acabar enfermando
 tres días después
-<SourcePopover ids={["src-larosa-carga-9"]} sources={frontmatter.sources} />.
+<SourcePopover ids={["src-larosa-carga-9", "src-hernandez-carga-4"]} sources={frontmatter.sources} />.
+Hernández concreta el umbral y qué hacer con él: lo que importa no es la cifra
+absoluta sino la caída respecto a la línea base propia, y un descenso del 20%
+es la señal
+<SourcePopover ids={["src-hernandez-carga-4"]} sources={frontmatter.sources} />.
+Ese día, además de no forzar, recomienda meter hidratos aunque la dieta
+habitual lleve pocos, para elevar la insulina y proteger la masa muscular
+<SourcePopover ids={["src-hernandez-carga-5"]} sources={frontmatter.sources} />.
+
+### Qué valores son normales
+
+Los rangos varían enormemente con la edad, así que compararse con otra persona
+sirve de poco:
+
+| Perfil | HRV aproximada |
+|---|---|
+| Deportistas profesionales de 19-20 años | 200-210 |
+| A partir de 25-26 años | 120-140 |
+| Profesionales de unos 30 años | 80-90 |
+| Hombre maduro activo | 45-60 |
+
+<SourcePopover ids={["src-hernandez-carga-3"]} sources={frontmatter.sources} />
 
 ## Ver también
 
