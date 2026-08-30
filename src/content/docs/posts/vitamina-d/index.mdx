@@ -1,0 +1,127 @@
+---
+title: Vitamina D
+description: Por qué casi todos salimos bajos en la analítica y cuándo suplementar es contraproducente.
+tags: [suplementación, biomarcadores]
+sources:
+  - id: src-hernandez-vitd-1
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Tenemos la vitamina D, que es el reservorio total que tenemos en el organismo, que es la 25-hidroxivitamina D, y luego tenemos la 1,25-dihidroxivitamina D, que es la fracción útil y disponible."
+    timestamp: "02:02:25"
+  - id: src-hernandez-vitd-2
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "La práctica totalidad, y cada vez más, de la población tiene un déficit brutal de vitamina D. Sin embargo, la 1,25 está bien. Eso significa que aunque tengamos un reservorio muy bajo, la conversión es lo suficientemente alta."
+    timestamp: "02:02:55"
+  - id: src-hernandez-vitd-3
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Yo desde hace años miro la reserva y muchas veces mido la 1,25, y siempre está bien. Si la reserva está baja, la 1,25 en el 90% de las personas está alta."
+    timestamp: "02:03:26"
+  - id: src-hernandez-vitd-4
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Todas las células inmunológicas tienen un receptor que se llama VDR, el receptor de vitamina D, que es crucial para que los neutrófilos, los linfocitos y los monocitos funcionen. Si yo no tengo vitamina D, no van a funcionar."
+    timestamp: "02:03:57"
+  - id: src-hernandez-vitd-5
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Ante esos procesos tú vas a ir gastando el reservorio, pero vas a tener la 1,25 bien porque estás tirando de todo, hasta que llegue un momento en que no te quede casi reservorio. Y ahí es el problema."
+    timestamp: "02:04:28"
+  - id: src-hernandez-vitd-6
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Yo he tenido cinco casos en consulta, uno de ellos con una arritmia que casi la palma, con hipercalcemia. Y cuando vi los análisis estaba tomando 10.000 unidades de vitamina D porque lo estaba viendo en internet."
+    timestamp: "02:04:59"
+  - id: src-hernandez-vitd-7
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Con 2.000 unidades no va a pasar nada, pero si te vas a 5.000, 10.000 unidades mucho tiempo y tu conversión es buena, lo que va a existir es que acabes con una hipervitaminosis, porque la vitamina D es liposoluble y se acumula en el organismo."
+    timestamp: "02:05:30"
+  - id: src-hernandez-vitd-8
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "Si estuvieras por debajo de 20, sí que te digo: tómate, ponte al sol. Pero con 30, y sin enfermedades inflamatorias sistémicas y sin inflamación, no nos obsesionemos. Menos es más."
+    timestamp: "02:06:30"
+  - id: src-hernandez-vitd-9
+    interview: sergio-begueria-entrevista-antonio-hernandez
+    personIds: [antonio-hernandez]
+    quote: "A los 45, 50 años la vitamina D está muy vinculada con la pérdida de densidad mineral ósea, con la osteoporosis. Entonces ahí cambia, porque estoy personalizando y contextualizando, por ejemplo con la mujer con menopausia."
+    timestamp: "02:07:00"
+---
+
+import SourcePopover from '../../../../components/SourcePopover.astro';
+
+## Dos moléculas, no una
+
+La confusión que está detrás de casi todo lo demás es que «vitamina D» nombra
+dos cosas distintas:
+
+- **25-hidroxivitamina D** — el reservorio. Es lo que mide la analítica
+  habitual.
+- **1,25-dihidroxivitamina D** — la fracción activa, la que el cuerpo usa
+  realmente.
+
+<SourcePopover ids={["src-hernandez-vitd-1"]} sources={frontmatter.sources} />
+
+## Por qué casi todo el mundo sale bajo
+
+Prácticamente toda la población presenta un reservorio bajo. Pero cuando
+Hernández mide además la fracción activa, esta suele estar correcta: la
+conversión es lo bastante eficiente como para cubrir la demanda aun con poca
+reserva
+<SourcePopover ids={["src-hernandez-vitd-2"]} sources={frontmatter.sources} />.
+Según su experiencia, en el 90% de las personas con reserva baja la 1,25 está
+alta
+<SourcePopover ids={["src-hernandez-vitd-3"]} sources={frontmatter.sources} />.
+
+Eso no convierte la vitamina D en prescindible. Todas las células inmunitarias
+—neutrófilos, linfocitos, monocitos— dependen del receptor VDR para funcionar
+<SourcePopover ids={["src-hernandez-vitd-4"]} sources={frontmatter.sources} />.
+El riesgo real aparece cuando un proceso exigente y prolongado —una
+inflamación crónica, una enfermedad larga— consume la reserva hasta agotarla
+<SourcePopover ids={["src-hernandez-vitd-5"]} sources={frontmatter.sources} />.
+
+```d2
+reserva: 25-OH (reservorio)
+activa: 1,25-OH (fracción útil)
+demanda: demanda inmunitaria
+
+reserva -> activa: conversión eficiente
+demanda -> activa: consume
+activa -> reserva: agota la reserva si se prolonga
+```
+
+## El riesgo de las megadosis
+
+De la lectura anterior se sigue el problema. Si alguien ve su reserva baja y
+responde con dosis altas mientras su conversión funciona bien, acaba
+empujando demasiada vitamina hacia la fracción activa. Y como la vitamina D es
+liposoluble, se acumula
+<SourcePopover ids={["src-hernandez-vitd-7"]} sources={frontmatter.sources} />.
+
+Hernández dice haber visto cinco casos de hipervitaminosis en consulta; en
+uno de ellos, con hipercalcemia y una arritmia que estuvo cerca de acabar mal,
+la persona tomaba 10.000 UI diarias siguiendo lo que había leído en internet
+<SourcePopover ids={["src-hernandez-vitd-6"]} sources={frontmatter.sources} />.
+
+Su umbral práctico: hasta 2.000 UI no espera problemas; el riesgo aparece con
+5.000 o 10.000 UI sostenidas en el tiempo
+<SourcePopover ids={["src-hernandez-vitd-7"]} sources={frontmatter.sources} />.
+
+## Cuándo sí suplementar
+
+- **Reserva por debajo de 20**: suplementar y exponerse al sol
+  <SourcePopover ids={["src-hernandez-vitd-8"]} sources={frontmatter.sources} />.
+- **En torno a 30, sin inflamación ni enfermedad sistémica**: no obsesionarse.
+  Si hay dudas, medir la fracción activa antes de actuar
+  <SourcePopover ids={["src-hernandez-vitd-8"]} sources={frontmatter.sources} />.
+- **A partir de los 45-50 años, y en mujeres con menopausia**: el cálculo
+  cambia, por su papel en la densidad mineral ósea y la osteoporosis
+  <SourcePopover ids={["src-hernandez-vitd-9"]} sources={frontmatter.sources} />.
+
+## Ver también
+
+El criterio general sobre suplementación, en
+[Alimentación y longevidad](/posts/alimentacion-y-longevidad/); su papel en
+los niveles hormonales, en [Testosterona](/posts/testosterona/).
