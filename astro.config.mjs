@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 
 import starlight from '@astrojs/starlight';
 
+import starlightThemeNext from 'starlight-theme-next';
+
 import react from '@astrojs/react';
 
 import tailwindcss from '@tailwindcss/vite';
@@ -14,6 +16,7 @@ import d2 from 'astro-d2';
 export default defineConfig({
   integrations: [starlight({
     title: 'Atlas Salutis',
+    plugins: [starlightThemeNext()],
     customCss: ['./src/styles/global.css'],
     sidebar: [
       { label: 'Personas', link: '/people/' },
