@@ -33,4 +33,8 @@ const resolved: ResolvedSource[] = await Promise.all(
 );
 ---
 
-<SourcePopoverIsland sources={resolved} client:visible />
+{/* `.not-content` opts the hydrated island out of Starlight's `.sl-markdown-content`
+    spacing rules, which otherwise give the trigger a `margin-top` when the popover
+    follows a block element. The `<span>` wrapper is itself exempt (Starlight excludes
+    `span` from those selectors), so it adds no margin of its own. */}
+<span class="not-content"><SourcePopoverIsland sources={resolved} client:visible /></span>
