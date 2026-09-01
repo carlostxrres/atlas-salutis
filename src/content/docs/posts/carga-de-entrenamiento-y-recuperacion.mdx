@@ -48,6 +48,11 @@ sources:
     personIds: [sebastian-la-rosa]
     quote: "Hoy me levanté con bajos valores de variabilidad de la frecuencia cardíaca, no me esfuerzo de más para no generar daño no recuperable y que después en tres días de hacer lo mismo me enferme. Es central, porque regula hasta dónde yo puedo y hasta dónde no."
     timestamp: "01:28:28"
+  - id: src-larosa-carga-10
+    interview: sergio-begueria-entrevista-sebastian-la-rosa
+    personIds: [sebastian-la-rosa]
+    quote: "Mientras mayor es la actividad que nosotros hacemos o mientras mayor es la intensidad percibida, mayor es el sueño profundo que tengo. Yo generé más daño a mi cuerpo por hacer ejercicio y lo tengo que reparar."
+    timestamp: "00:41:28"
   - id: src-hernandez-carga-1
     interview: sergio-begueria-entrevista-antonio-hernandez
     personIds: [antonio-hernandez]
@@ -73,6 +78,26 @@ sources:
     personIds: [antonio-hernandez]
     quote: "Ese día entrenar, aunque tú creas que te viene bien para liberar endorfinas, no es lo más correcto. Y ese día, aunque no tengas carbos en tu dieta, mejor mete carbos, porque te va a elevar la insulina y tu musculatura va a estar más protegida."
     timestamp: "02:15:10"
+  - id: src-estivill-carga-1
+    interview: sergio-begueria-entrevista-eduard-estivill
+    personIds: [eduard-estivill]
+    quote: "Lo que está demostrado es que la gente que hace ejercicio y no duerme las horas adecuadas tiene entre un 10 y un 20% más de lesiones musculares."
+    timestamp: "00:00:33"
+  - id: src-estivill-carga-2
+    interview: sergio-begueria-entrevista-eduard-estivill
+    personIds: [eduard-estivill]
+    quote: "En este peldaño del sueño profundo segregamos la hormona del crecimiento. Aquí es donde hacemos la reparación de tipo físico, donde todos nuestros músculos vuelven a recuperar la fuerza."
+    timestamp: "00:30:20"
+  - id: src-estivill-carga-3
+    interview: sergio-begueria-entrevista-eduard-estivill
+    personIds: [eduard-estivill]
+    quote: "Cristiano Ronaldo duerme 11 horas. Messi duerme 11 horas. Cubarsí, este chaval joven del Barça, duerme 10 horas. Y lo explican espontáneamente."
+    timestamp: "01:09:54"
+  - id: src-estivill-carga-4
+    interview: sergio-begueria-entrevista-eduard-estivill
+    personIds: [eduard-estivill]
+    quote: "Los jugadores de fútbol, cuando juegan a las 10 de la noche y terminan a las 11, no duermen hasta las 3 de la madrugada. No es que sean holgazanes: es que no pueden dormir."
+    timestamp: "01:02:39"
 ---
 
 import SourcePopover from '../../../components/SourcePopover.astro';
@@ -182,3 +207,43 @@ sirve de poco:
 
 Qué entrenar y con qué intensidad, en
 [Longevidad y ejercicio](/posts/longevidad-y-ejercicio/).
+
+## El sueño es donde ocurre la reparación
+
+La contrapartida de todo lo anterior es que la recuperación no se decide solo
+en cuánto se entrena, sino en cuánto se duerme. Eduard Estivill sitúa la
+reparación física en el peldaño de sueño profundo, que es donde se segrega la
+hormona del crecimiento: el músculo no se construye en el gimnasio, sino esa
+misma noche
+<SourcePopover ids={["src-estivill-carga-2"]} sources={frontmatter.sources} />.
+
+El dato que cierra el argumento es de lesiones: quien entrena y no duerme las
+horas que necesita tiene entre un 10 y un 20% más de lesiones musculares
+<SourcePopover ids={["src-estivill-carga-1"]} sources={frontmatter.sources} />.
+Es la misma idea que sostiene La Rosa desde el otro lado —a más intensidad
+percibida, más sueño profundo necesario
+<SourcePopover ids={["src-larosa-carga-10", "src-estivill-carga-2"]} sources={frontmatter.sources} />—:
+la carga que se puede sostener depende de la recuperación disponible.
+
+Como referencia, Estivill apunta lo que duermen los deportistas de élite a los
+que trata: alrededor de once horas Cristiano Ronaldo y Messi, contando siestas,
+y diez horas un jugador adolescente como Cubarsí
+<SourcePopover ids={["src-estivill-carga-3"]} sources={frontmatter.sources} />.
+
+## Entrenar de noche sale caro
+
+Hay un coste en la hora del entrenamiento que rara vez se contabiliza. Las
+endorfinas que libera el ejercicio son estimulantes, y entrenar tarde deja al
+sistema activado cuando tocaría lo contrario. El ejemplo extremo son los
+futbolistas que terminan un partido a las once de la noche y no consiguen
+dormirse hasta las tres de la madrugada
+<SourcePopover ids={["src-estivill-carga-4"]} sources={frontmatter.sources} />.
+La pauta horaria completa está en
+[Rutinas para desconectar](/posts/rutinas-para-desconectar/).
+
+## Ver también
+
+- Las fases del sueño y dónde cae la reparación física, en
+  [Calidad del sueño](/posts/calidad-del-sueno/).
+- Cómo el cronotipo condiciona a qué hora se rinde más, en
+  [Ritmos circadianos y cronotipos](/posts/ritmos-circadianos-y-cronotipos/).
