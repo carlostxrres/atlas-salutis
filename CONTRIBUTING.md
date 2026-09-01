@@ -43,15 +43,16 @@ cada post, que es la fuente de verdad para el renderizado de citas
 ## Un cambio lógico por commit
 
 No agrupar ediciones de posts no relacionados en un mismo commit: mantiene
-`git log -- src/content/docs/posts/<slug>` como un historial limpio por post.
+`git log -- src/content/docs/posts/<slug>.mdx` como un historial limpio por
+post.
 
 ## Renombrar antes de editar
 
-Cuando la reorganización de conocimiento implica mover o renombrar una
-carpeta de post, hacer el `git mv` en su propio commit (`content(reorg): ...`),
-separado de cualquier edición de contenido en el mismo post. Así la detección
-de renombrados de git funciona de forma fiable y los diffs se mantienen
-legibles.
+Cuando la reorganización de conocimiento implica mover o renombrar un fichero
+de post (`src/content/docs/posts/<slug>.mdx`), hacer el `git mv` en su propio
+commit (`content(reorg): ...`), separado de cualquier edición de contenido en
+el mismo post. Así la detección de renombrados de git funciona de forma fiable
+y los diffs se mantienen legibles.
 
 ## Pipeline de ingesta de entrevistas
 

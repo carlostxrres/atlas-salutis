@@ -135,7 +135,7 @@ interview files — everything here is metadata.
 ## Step 6 — Find or create posts
 
 List existing posts' frontmatter (`title`, `description`, `tags`) via
-`Glob src/content/docs/posts/*/index.mdx` + reading just the frontmatter of
+`Glob src/content/docs/posts/*.mdx` + reading just the frontmatter of
 each. For every candidate claim from Step 3:
 
 - **Extend** an existing post if its topic substantially covers the claim —
@@ -147,17 +147,23 @@ each. For every candidate claim from Step 3:
   texto que incluye toda la información sobre ese tema" — one interview
   usually touches a handful of topics across new and existing posts, never
   one post per claim. New post path:
-  `src/content/docs/posts/<topic-slug>/index.mdx`, where `<topic-slug>` is a
-  2-4 word kebab-case Spanish topic phrase (matches `calidad-del-sueno`,
-  `longevidad-y-ejercicio`). Check existing `tags` across posts first and
-  reuse that vocabulary instead of fragmenting it (don't add `sleep`
-  alongside an existing `sueño`).
+  `src/content/docs/posts/<topic-slug>.mdx` — one flat file per post, never
+  a folder — where `<topic-slug>` is a 2-4 word kebab-case Spanish topic
+  phrase (matches `calidad-del-sueno`, `longevidad-y-ejercicio`). Check
+  existing `tags` across posts first and reuse that vocabulary instead of
+  fragmenting it (don't add `sleep` alongside an existing `sueño`).
 - Posts are **always written in Spanish**, regardless of the interview's
   spoken language — translate/distill English-language claims.
+- The post's frontmatter `title` is **what the sidebar shows**. Write it as
+  human-readable Spanish prose with proper accents and capitalisation
+  (`Alimentación y longevidad`), never as a slug. The file name carries the
+  slug (kebab-case, unaccented); the two are independent. This holds for
+  every post you create, on every run — a slug-shaped `title` leaks straight
+  into the site navigation.
 - A brand-new post needs the standard import line at the top of its body:
-  `import SourcePopover from '../../../../components/SourcePopover.astro';`
-  (4 levels up from `posts/<slug>/index.mdx` — copy this exactly, it's
-  fixed by the folder depth).
+  `import SourcePopover from '../../../components/SourcePopover.astro';`
+  (3 levels up from `posts/<slug>.mdx` — copy this exactly, it's fixed by
+  the file depth).
 - Claims you judged as noise in Step 3 simply aren't written anywhere — that
   filtering already happened.
 
