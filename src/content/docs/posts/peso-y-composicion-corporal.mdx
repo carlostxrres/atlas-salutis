@@ -169,6 +169,22 @@ sources:
     personIds: [eneko-baz]
     quote: "De forma genérica, al glúteo le cuesta más quitar grasa. O sea, es lo último que se va, la última grasa que se va es la del glúteo."
     timestamp: "01:22:22"
+
+  - id: src-perujo-peso-1
+    interview: sergio-begueria-entrevista-ivan-perujo
+    personIds: [ivan-perujo]
+    quote: "Alguien que haga una dieta puede perder más peso que un cliente mío que haga el reto. ¿Por qué? Porque el que haga el reto va a hacer mucho deporte, y ese músculo va a tener un peso en el cuerpo."
+    timestamp: "00:37:13"
+  - id: src-perujo-peso-2
+    interview: sergio-begueria-entrevista-ivan-perujo
+    personIds: [ivan-perujo]
+    quote: "No es tanto el peso, sino cómo tú te veas en el espejo y digas «me gusta lo que veo»."
+    timestamp: "00:37:32"
+  - id: src-perujo-peso-3
+    interview: sergio-begueria-entrevista-ivan-perujo
+    personIds: [ivan-perujo]
+    quote: "Uno de los peleadores, según hizo el pesaje, dio dos pasos y se cayó, porque están al límite. Luego ya se ponen a comer y recuperan de un día a otro siete u ocho kilos. Son salvajadas; eso no es nada bueno."
+    timestamp: "00:56:51"
 ---
 
 import SourcePopover from '../../../components/SourcePopover.astro';
@@ -185,6 +201,23 @@ normal, que nadie consideraría con sobrepeso, pero con un porcentaje alto de
 grasa y poca masa muscular. Las consecuencias metabólicas que asociamos al
 sobrepeso van ligadas al porcentaje de grasa, no al peso
 <SourcePopover ids={["src-larosa-peso-2"]} sources={frontmatter.sources} />.
+
+Iván Perujo llega a la misma conclusión desde un dato de su práctica que lo
+deja especialmente claro: alguien que solo hace dieta puede perder **más** peso
+que uno de sus clientes, precisamente porque el que entrena está construyendo
+músculo, y ese músculo pesa
+<SourcePopover ids={["src-larosa-peso-2", "src-perujo-peso-1"]} sources={frontmatter.sources} />.
+El número de la báscula mejora más en el caso peor. Su criterio de sustitución
+es deliberadamente poco técnico —lo que se ve en el espejo antes que la cifra
+<SourcePopover ids={["src-perujo-peso-2"]} sources={frontmatter.sources} />—,
+y sirve como versión doméstica de lo que la composición corporal mide bien.
+
+La otra ilustración de que el peso no es tejido viene del deporte de combate:
+en los cortes previos al pesaje, un peleador puede dar dos pasos y caerse, y
+recuperar siete u ocho kilos de un día para otro
+<SourcePopover ids={["src-perujo-peso-3"]} sources={frontmatter.sources} />.
+Nada de eso es grasa ni músculo. El detalle está en
+[Hidratación](/posts/hidratacion/).
 
 Por eso varias instituciones empiezan a definir el sobrepeso por composición
 corporal en lugar de por báscula. Al medir con DEXA aparecen personas
