@@ -23,3 +23,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# colas locales de entrevistas pendientes de ingerir (notas de trabajo, no forman parte del sitio)
+docs/queue.md
+next.md
