@@ -23,6 +23,9 @@ export default defineConfig({
   site: 'https://atlassalutis.netlify.app',
   integrations: [starlight({
     title: 'Atlas Salutis',
+    locales: {
+      root: { label: 'Español', lang: 'es' },
+    },
     plugins: [
       starlightThemeNext(),
       starlightImageZoom(),
