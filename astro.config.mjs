@@ -53,6 +53,10 @@ export default defineConfig({
   }), react(), mdx(), d2({
     inline: true,
     experimental: { useD2js: true },
+    theme: {
+      dark: '100',
+      default: '100',
+    }
   })],
 
   vite: {
