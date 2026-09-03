@@ -40,16 +40,38 @@ Esto complementa —no sustituye— el campo `sources[]` en el frontmatter de
 cada post, que es la fuente de verdad para el renderizado de citas
 (`SourcePopover`). El commit da trazabilidad a nivel de `git log`.
 
+## Dónde va cada post
+
+Los posts viven en cinco carpetas temáticas bajo `src/content/docs/posts/`.
+La carpeta forma parte de la URL (`/posts/<grupo>/<slug>/`) y determina en qué
+grupo del sidebar aparece el post:
+
+| Carpeta | Grupo en el sidebar | Qué recoge |
+|---|---|---|
+| `alimentacion` | Alimentación | Qué comer y beber: nutrientes, pautas, suplementos, hidratación |
+| `entrenamiento` | Entrenamiento y movimiento | Cómo entrenar: fuerza, carga, técnica, movilidad |
+| `sueno` | Sueño y descanso | Dormir: calidad, ritmos, entorno, insomnio |
+| `metabolismo` | Peso, metabolismo y hormonas | Qué mide el cuerpo: composición corporal, analítica, hormonas |
+| `habitos` | Mente y hábitos | Por qué se sostiene o se abandona: adherencia, estrés, salud mental |
+
+Al crear un post nuevo hay que elegir una de las cinco. Si un tema encaja en
+dos, decide el eje principal del post: *Cómo perder grasa* va en
+`metabolismo` aunque hable de entrenamiento, porque el objeto del post es la
+composición corporal.
+
+Las etiquetas del sidebar están en `astro.config.mjs`; una carpeta nueva no
+aparece en la navegación hasta que se le añade su entrada.
+
 ## Un cambio lógico por commit
 
 No agrupar ediciones de posts no relacionados en un mismo commit: mantiene
-`git log -- src/content/docs/posts/<slug>.mdx` como un historial limpio por
-post.
+`git log -- src/content/docs/posts/<grupo>/<slug>.mdx` como un historial
+limpio por post.
 
 ## Renombrar antes de editar
 
 Cuando la reorganización de conocimiento implica mover o renombrar un fichero
-de post (`src/content/docs/posts/<slug>.mdx`), hacer el `git mv` en su propio
+de post (`src/content/docs/posts/<grupo>/<slug>.mdx`), hacer el `git mv` en su propio
 commit (`content(reorg): ...`), separado de cualquier edición de contenido en
 el mismo post. Así la detección de renombrados de git funciona de forma fiable
 y los diffs se mantienen legibles.

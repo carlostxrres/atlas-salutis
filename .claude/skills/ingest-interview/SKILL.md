@@ -135,8 +135,8 @@ interview files — everything here is metadata.
 ## Step 6 — Find or create posts
 
 List existing posts' frontmatter (`title`, `description`, `tags`) via
-`Glob src/content/docs/posts/*.mdx` + reading just the frontmatter of
-each. For every candidate claim from Step 3:
+`Glob src/content/docs/posts/**/*.mdx` — note the `**`, posts live in
+thematic subfolders — + reading just the frontmatter of each. For every candidate claim from Step 3:
 
 - **Extend** an existing post if its topic substantially covers the claim —
   add a citation (Step 7) and weave the claim into the prose as a new
@@ -147,11 +147,28 @@ each. For every candidate claim from Step 3:
   texto que incluye toda la información sobre ese tema" — one interview
   usually touches a handful of topics across new and existing posts, never
   one post per claim. New post path:
-  `src/content/docs/posts/<topic-slug>.mdx` — one flat file per post, never
-  a folder — where `<topic-slug>` is a 2-4 word kebab-case Spanish topic
-  phrase (matches `calidad-del-sueno`, `longevidad-y-ejercicio`). Check
-  existing `tags` across posts first and reuse that vocabulary instead of
-  fragmenting it (don't add `sleep` alongside an existing `sueño`).
+  `src/content/docs/posts/<grupo>/<topic-slug>.mdx` — one flat file inside
+  one of the five thematic folders, never a deeper nesting — where
+  `<topic-slug>` is a 2-4 word kebab-case Spanish topic phrase (matches
+  `calidad-del-sueno`, `longevidad-y-ejercicio`).
+
+  The five groups, and what each one holds:
+
+  | Folder | Sidebar group | Scope |
+  |---|---|---|
+  | `alimentacion` | Alimentación | What to eat and drink: nutrients, guidance, supplements, hydration |
+  | `entrenamiento` | Entrenamiento y movimiento | How to train: strength, load, technique, mobility |
+  | `sueno` | Sueño y descanso | Sleep: quality, rhythms, environment, insomnia |
+  | `metabolismo` | Peso, metabolismo y hormonas | What the body measures: body composition, blood work, hormones |
+  | `habitos` | Mente y hábitos | Why it sticks or doesn't: adherence, stress, mental health |
+
+  Pick by the post's **main axis**, not by every topic it touches: *Cómo
+  perder grasa* sits in `metabolismo` even though it discusses training,
+  because the post is about body composition. A genuinely new group means
+  editing the `sidebar` array in `astro.config.mjs` too — otherwise it never
+  shows up in the navigation. Check existing `tags` across posts first and
+  reuse that vocabulary instead of fragmenting it (don't add `sleep`
+  alongside an existing `sueño`).
 - Posts are **always written in Spanish**, regardless of the interview's
   spoken language — translate/distill English-language claims.
 - The post's frontmatter `title` is **what the sidebar shows**. Write it as
@@ -161,9 +178,10 @@ each. For every candidate claim from Step 3:
   every post you create, on every run — a slug-shaped `title` leaks straight
   into the site navigation.
 - A brand-new post needs the standard import line at the top of its body:
-  `import SourcePopover from '../../../components/SourcePopover.astro';`
-  (3 levels up from `posts/<slug>.mdx` — copy this exactly, it's fixed by
-  the file depth).
+  `import SourcePopover from '@/components/SourcePopover.astro';`
+  Copy it exactly. It uses the `@/` alias from `tsconfig.json`, so it does
+  not depend on how deep the file sits — do not turn it back into a relative
+  path.
 - Claims you judged as noise in Step 3 simply aren't written anywhere — that
   filtering already happened.
 
@@ -216,7 +234,8 @@ trailer in the body:
    promotion). Skip this commit entirely if no people were created/changed.
 2. `content(interview): añadir entrevista <slug>` — the new interview file.
 3. One `content(post): ...` commit **per post touched** (created or edited)
-   — never batch unrelated posts into one commit.
+   — never batch unrelated posts into one commit. Post paths include their
+   group: `src/content/docs/posts/<grupo>/<slug>.mdx`.
 
 Every content commit body includes:
 ```
