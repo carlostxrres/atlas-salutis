@@ -1,0 +1,85 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+import { getAllPosts } from '@/lib/xref';
+import TopicGrid, { type TopicItem } from '@/components/TopicGrid';
+import StatsStrip, { type StatItem } from '@/components/StatsStrip';
+
+const [people, interviews, posts] = await Promise.all([
+  getCollection('people'),
+  getCollection('interviews'),
+  getAllPosts(),
+]);
+
+const topics: TopicItem[] = [
+  {
+    icon: 'alimentacion',
+    label: 'Alimentación',
+    description: 'Qué comer y beber: nutrientes, pautas, suplementos, hidratación.',
+    href: '/posts/alimentacion/alimentacion-y-longevidad/',
+  },
+  {
+    icon: 'entrenamiento',
+    label: 'Entrenamiento y movimiento',
+    description: 'Cómo entrenar: fuerza, carga, técnica, movilidad.',
+    href: '/posts/entrenamiento/entrenamiento-de-fuerza/',
+  },
+  {
+    icon: 'sueno',
+    label: 'Sueño y descanso',
+    description: 'Dormir: calidad, ritmos, entorno, insomnio.',
+    href: '/posts/sueno/calidad-del-sueno/',
+  },
+  {
+    icon: 'metabolismo',
+    label: 'Peso, metabolismo y hormonas',
+    description: 'Qué mide el cuerpo: composición corporal, analítica, hormonas.',
+    href: '/posts/metabolismo/peso-y-composicion-corporal/',
+  },
+  {
+    icon: 'habitos',
+    label: 'Mente y hábitos',
+    description: 'Por qué se sostiene o se abandona: adherencia, estrés, salud mental.',
+    href: '/posts/habitos/salud-mental-y-habitos/',
+  },
+];
+
+const stats: StatItem[] = [
+  { value: posts.length, label: posts.length === 1 ? 'post' : 'posts' },
+  { value: people.length, label: people.length === 1 ? 'persona' : 'personas', href: '/people/' },
+  {
+    value: interviews.length,
+    label: interviews.length === 1 ? 'entrevista' : 'entrevistas',
+    href: '/interviews/',
+  },
+];
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Atlas Salutis',
+    description:
+      'Una base de conocimiento de salud práctica, mantenida por IA, con cada afirmación trazable a su fuente.',
+    template: 'splash',
+    editUrl: false,
+    hero: {
+      tagline: 'Salud práctica destilada de entrevistas reales. Cada afirmación, trazable a su fuente.',
+      actions: [
+        { text: 'Ver personas', link: '/people/', variant: 'primary' },
+        { text: 'Ver entrevistas', link: '/interviews/', variant: 'secondary' },
+      ],
+    },
+  }}
+>
+  <div class="not-content mx-auto flex max-w-3xl flex-col gap-10">
+    <p class="text-foreground text-center text-base leading-relaxed sm:text-lg">
+      Atlas Salutis es una base de conocimiento viva sobre salud práctica y personal. El contenido
+      se genera y mantiene con IA a partir de entrevistas de salud en YouTube — nada se inventa,
+      solo se destila y reorganiza.
+    </p>
+
+    <TopicGrid items={topics} />
+
+    <StatsStrip items={stats} />
+  </div>
+</StarlightPage>
