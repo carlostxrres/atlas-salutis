@@ -1,0 +1,15 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import NotFoundEmpty from '@/components/NotFoundEmpty';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Página no encontrada',
+    description: 'La página que buscas no existe o se ha movido.',
+    template: 'splash',
+    editUrl: false,
+  }}
+>
+  <NotFoundEmpty />
+</StarlightPage>
