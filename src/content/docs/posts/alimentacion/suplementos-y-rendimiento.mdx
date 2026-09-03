@@ -205,6 +205,36 @@ sources:
     personIds: [juan-bola]
     quote: "Mucha gente que dices, oye, estate 20 días sin café, a ver qué te pasa: tienen síntomas de abstinencia, tienen problemas."
     timestamp: "02:11:00"
+  - id: src-bor-suplementos-1
+    interview: sergio-begueria-entrevista-bianca-bor
+    personIds: [bianca-bor]
+    quote: "Para que el omega-3 que te compres esté libre de tóxicos y metales, debería llevar un sello que ponga IFOS en el botecito, que garantiza que esas cápsulas han pasado por un filtro y cumplen con unos mínimos de metales pesados."
+    timestamp: "00:15:08"
+  - id: src-bor-suplementos-2
+    interview: sergio-begueria-entrevista-bianca-bor
+    personIds: [bianca-bor]
+    quote: "En consulta uso suplementación, pero es un tratamiento temporal: hacemos un plan de nutrición con suplementación de forma temporal y luego se retira y puedes hacer tu vida normal y olvidarte de los suplementos."
+    timestamp: "00:19:10"
+  - id: src-bor-suplementos-3
+    interview: sergio-begueria-entrevista-bianca-bor
+    personIds: [bianca-bor]
+    quote: "El magnesio casi todo el mundo es deficitario. Es algo que es muy difícil cubrirlo con la alimentación, y afecta a nivel energía, a los músculos, a nivel digestivo."
+    timestamp: "00:21:31"
+  - id: src-bor-suplementos-4
+    interview: sergio-begueria-entrevista-bianca-bor
+    personIds: [bianca-bor]
+    quote: "El ibuprofeno lo que hace es cortar la inflamación de raíz. El omega-3 lo que hace es promover que tu cuerpo la resuelva sola: en vez de cortarla, promueve que la curva vuelva a bajar sola."
+    timestamp: "00:23:20"
+  - id: src-bor-suplementos-5
+    interview: sergio-begueria-entrevista-bianca-bor
+    personIds: [bianca-bor]
+    quote: "El magnesio bisglicinato es más para el descanso, para el sistema nervioso, para relajarte. El citrato y el carbonato son los que más ayudan a ir al baño. Si eres una persona que tiene diarreas, que sea bisglicinato."
+    timestamp: "00:24:18"
+  - id: src-bor-suplementos-6
+    interview: sergio-begueria-entrevista-bianca-bor
+    personIds: [bianca-bor]
+    quote: "Tengo un montón de pacientes que toman 15 pastillas en fila todas las mañanas. Eso no lo recomiendo para nada. Los suplementos son para complementar, no para sustituir."
+    timestamp: "00:25:01"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -480,6 +510,25 @@ La excepción que no admite discusión es la **B12 en dietas vegetarianas y
 veganas**: ahí la suplementación es obligatoria
 <SourcePopover ids={["src-lopez-moreno-suplementos-5"]} sources={frontmatter.sources} />.
 
+Bianca Bor matiza el «empezar por la casa» con la única defensa clara del
+suplemento que aparece en las entrevistas, y es de tiempo: en consulta
+digestiva lo usa casi siempre, pero como **tratamiento temporal**, que entra
+mientras se repara algo y se retira después
+<SourcePopover ids={["src-bor-suplementos-2"]} sources={frontmatter.sources} />.
+Su imagen es la de una herida: si el limón escuece, se retira el limón un
+tiempo y se pone betadine; el betadine es el suplemento, y no se pone para
+siempre.
+
+Ahí el suplemento hace un trabajo que la dieta sola no hace: es lo que permite
+que los alimentos retirados temporalmente se puedan reintroducir después —el
+proceso está en
+[Intolerancias alimentarias](/posts/alimentacion/intolerancias-alimentarias/).
+
+Lo que rechaza es lo contrario, y coincide con Oliver: pacientes que llegan con
+quince pastillas en fila cada mañana, tomadas para compensar lo que no
+arreglan la comida, el descanso ni el estrés
+<SourcePopover ids={["src-oliver-suplementos-7", "src-bor-suplementos-6"]} sources={frontmatter.sources} />.
+
 ## Omega-3: por qué el lino no sustituye al pescado
 
 Es la cuenta más útil de toda la entrevista, porque contradice una sustitución
@@ -499,6 +548,31 @@ ronda los 2 g. Si el pescado no entra en la dieta, el suplemento de omega-3 es
 la vía razonable —también la que recomienda Oliver para bajar el colesterol, en
 [Colesterol y riesgo cardiovascular](/posts/metabolismo/colesterol-y-riesgo-cardiovascular/).
 
+### Qué mirar en el bote
+
+Bianca Bor da el único criterio de compra concreto que aparece en las
+entrevistas de este sitio, y tiene sentido porque el omega-3 se extrae
+precisamente de los peces que acumulan metales pesados. Busca el sello
+**IFOS**, que certifica que esas cápsulas cumplen unos mínimos de metales
+pesados y tóxicos y que el contenido se corresponde con la etiqueta
+<SourcePopover ids={["src-bor-suplementos-1"]} sources={frontmatter.sources} />.
+Su advertencia es que los botes de supermercado no suelen llevarlo, con lo que
+se puede acabar ingiriendo metales pesados creyendo que se hace algo bueno.
+
+El matiz técnico que añade: el aceite puede certificarse antes de encapsularse,
+y lo ideal es que el producto vuelva a pasar el control una vez ya en cápsula.
+
+### Cortar la inflamación o resolverla
+
+Su explicación de para qué sirve el omega-3 es la más clara de la colección, y
+es una distinción de mecanismo. Ante un dolor de cabeza por inflamación
+sistémica, el ibuprofeno **corta** la inflamación; el omega-3 **promueve que el
+cuerpo la resuelva** por sí mismo, haciendo que la curva baje sola
+<SourcePopover ids={["src-bor-suplementos-4"]} sources={frontmatter.sources} />.
+
+De ahí su reserva sobre el uso recurrente de antiinflamatorios para cualquier
+molestia: lo que se acaba entrenando es a cortar la respuesta, no a resolverla.
+
 ## Magnesio: por qué la analítica engaña
 
 Oliver defiende el magnesio con un argumento que va más allá del mineral: la
@@ -511,6 +585,24 @@ que el estado real sea subóptimo
 <SourcePopover ids={["src-oliver-suplementos-8"]} sources={frontmatter.sources} />.
 Es la excepción parcial a su propia regla de la analítica: es uno de los pocos
 casos donde el análisis no zanja la pregunta.
+
+Bianca Bor llega a la misma conclusión desde la consulta digestiva y por eso lo
+incluye entre los pocos suplementos que daría a población general: es difícil
+de cubrir con la dieta y casi todo el mundo va corto
+<SourcePopover ids={["src-oliver-suplementos-8", "src-bor-suplementos-3"]} sources={frontmatter.sources} />.
+
+Añade el detalle que decide la compra, porque la sal de magnesio cambia el
+efecto:
+
+| Forma | Para qué |
+|---|---|
+| Bisglicinato | Descanso, sistema nervioso, relajación |
+| Citrato | Ayuda a ir al baño |
+| Carbonato | El que más ayuda a ir al baño |
+
+De ahí su advertencia concreta: quien tiende a la diarrea debería elegir
+**bisglicinato**, porque el citrato o el carbonato se la van a fomentar
+<SourcePopover ids={["src-bor-suplementos-5"]} sources={frontmatter.sources} />.
 
 ## Ver también
 
