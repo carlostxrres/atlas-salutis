@@ -15,6 +15,6 @@ const summaries: InterviewSummary[] = interviews
   .sort((a, b) => b.date.localeCompare(a.date));
 ---
 
-<StarlightPage frontmatter={{ title: 'Entrevistas' }}>
+<StarlightPage frontmatter={{ title: 'Entrevistas', tableOfContents: false }}>
   <InterviewsSearch interviews={summaries} client:load />
 </StarlightPage>

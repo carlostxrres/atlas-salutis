@@ -17,7 +17,7 @@ const [interviewees, interviewers] = await Promise.all([
 ]);
 ---
 
-<StarlightPage frontmatter={{ title: interview.data.title, description: interview.data.summary }}>
+<StarlightPage frontmatter={{ title: interview.data.title, description: interview.data.summary, tableOfContents: false }}>
   <p>
     <strong>Canal:</strong> {interview.data.channel} ·
     <strong>Fecha:</strong> {interview.data.date.toISOString().slice(0, 10)}

@@ -33,7 +33,7 @@ const postItems: LinkCardItem[] = posts.map((post) => ({
 }));
 ---
 
-<StarlightPage frontmatter={{ title: person.data.name, description: person.data.profession }}>
+<StarlightPage frontmatter={{ title: person.data.name, description: person.data.profession, tableOfContents: false }}>
   <PersonProfileHeader
     name={person.data.name}
     role={person.data.role}

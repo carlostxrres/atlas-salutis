@@ -21,6 +21,6 @@ const summaries: PersonSummary[] = (
 ).sort((a, b) => a.name.localeCompare(b.name));
 ---
 
-<StarlightPage frontmatter={{ title: 'Personas' }}>
+<StarlightPage frontmatter={{ title: 'Personas', tableOfContents: false }}>
   <PeopleSearch people={summaries} client:load />
 </StarlightPage>
