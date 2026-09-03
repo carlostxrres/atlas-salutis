@@ -218,3 +218,17 @@
   background-color: var(--muted);
   color: var(--sl-color-accent);
 }
+
+/* .site-title (header logo + wordmark link): Starlight's own layer already
+   colors the text with our terracotta accent and lays out the logo, but
+   defines no hover state at all — unlike every other interactive header
+   element here (ThemeSelect, anchors, scroll-to-top), which all get a
+   subtle hover cue. Match that pattern with a gentle opacity dip rather
+   than a color swap. */
+.site-title {
+  transition: opacity 120ms ease;
+}
+
+.site-title:hover {
+  opacity: 0.75;
+}
