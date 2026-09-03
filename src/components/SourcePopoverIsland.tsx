@@ -16,7 +16,7 @@ export default function SourcePopoverIsland({ sources }: { sources: ResolvedSour
     <Popover>
       <PopoverTrigger
         aria-label={`${sources.length} fuente${sources.length === 1 ? '' : 's'}`}
-        className="mx-0.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-slate-200 px-1 align-super text-[0.65rem] font-semibold text-slate-700 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600"
+        className="bg-muted text-foreground hover:bg-accent hover:text-accent-foreground mx-0.5 inline-flex h-3.5 min-w-3.5 items-center justify-center rounded-full px-1 align-super text-[0.6rem] font-semibold"
       >
         {sources.length}
       </PopoverTrigger>
@@ -34,12 +34,12 @@ export default function SourcePopoverIsland({ sources }: { sources: ResolvedSour
                   </span>
                 ))}
               </div>
-              <a className="text-sm text-slate-500 underline dark:text-slate-400" href={`/interviews/${source.interviewId}/`}>
+              <a className="text-muted-foreground text-sm underline" href={`/interviews/${source.interviewId}/`}>
                 {source.interviewTitle}
                 {source.timestamp ? ` (${source.timestamp})` : ''}
               </a>
               {source.quote && (
-                <blockquote className="border-l-2 border-slate-300 pl-2 text-sm italic text-slate-600 dark:border-slate-600 dark:text-slate-300">
+                <blockquote className="border-border text-muted-foreground border-l-2 pl-2 text-sm italic">
                   &ldquo;{source.quote}&rdquo;
                 </blockquote>
               )}
