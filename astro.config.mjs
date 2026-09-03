@@ -5,6 +5,12 @@ import starlight from '@astrojs/starlight';
 
 import starlightThemeNext from 'starlight-theme-next';
 
+import starlightImageZoom from 'starlight-image-zoom';
+
+import starlightLlmsTxt from 'starlight-llms-txt';
+
+import starlightScrollToTop from 'starlight-scroll-to-top';
+
 import react from '@astrojs/react';
 
 import tailwindcss from '@tailwindcss/vite';
@@ -17,7 +23,13 @@ export default defineConfig({
   site: 'https://atlassalutis.netlify.app',
   integrations: [starlight({
     title: 'Atlas Salutis',
-    plugins: [starlightThemeNext()],
+    plugins: [
+      starlightThemeNext(),
+      starlightImageZoom(),
+      starlightLlmsTxt({ rawContent: true }),
+      starlightScrollToTop({ tooltipText: 'Volver arriba', showTooltip: true, borderRadius: '50' }),
+    ],
+    routeMiddleware: './src/routeData.ts',
     customCss: ['./src/styles/global.css'],
     favicon: '/favicon.svg',
     logo: {
