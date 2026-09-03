@@ -40,7 +40,6 @@ const people = defineCollection({
   schema: z.object({
     name: z.string(),
     role: z.enum(['interviewee', 'interviewer', 'both']),
-    photo: z.string().optional(),
     profession: z.string().optional(),
     bio: z.string(),
     links: z

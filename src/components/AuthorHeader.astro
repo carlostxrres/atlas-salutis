@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import AuthorHeaderList, { type AuthorSummary } from './AuthorHeaderList';
+import { getPersonPhoto } from '@/lib/people';
 
 interface Props {
   // Deduplicated person ids, e.g. from `getAuthorsForPost()` in `@/lib/xref`.
@@ -15,7 +16,7 @@ const people: AuthorSummary[] = (await Promise.all(personIds.map((id) => getEntr
     id: person.id,
     name: person.data.name,
     profession: person.data.profession,
-    photo: person.data.photo,
+    photo: getPersonPhoto(person.id),
   }));
 ---
 

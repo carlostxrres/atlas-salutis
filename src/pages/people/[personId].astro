@@ -2,6 +2,7 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { getCollection, render } from 'astro:content';
 import { getPostsForPerson, getPersonReferenceCount, getInterviewsForPerson } from '@/lib/xref';
+import { getPersonPhoto } from '@/lib/people';
 import PersonProfileHeader from '@/components/PersonProfileHeader';
 import LinkCardList, { type LinkCardItem } from '@/components/LinkCardList';
 
@@ -37,7 +38,7 @@ const postItems: LinkCardItem[] = posts.map((post) => ({
     name={person.data.name}
     role={person.data.role}
     profession={person.data.profession}
-    photo={person.data.photo}
+    photo={getPersonPhoto(person.id)}
     links={person.data.links}
   />
 

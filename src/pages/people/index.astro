@@ -3,6 +3,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { getCollection } from 'astro:content';
 import PeopleSearch, { type PersonSummary } from '@/components/PeopleSearch';
 import { getPostsForPerson } from '@/lib/xref';
+import { getPersonPhoto } from '@/lib/people';
 
 const people = await getCollection('people');
 const summaries: PersonSummary[] = (
@@ -13,7 +14,7 @@ const summaries: PersonSummary[] = (
       role: person.data.role,
       profession: person.data.profession,
       bio: person.data.bio,
-      photo: person.data.photo,
+      photo: getPersonPhoto(person.id),
       postCount: (await getPostsForPerson(person.id)).length,
     })),
   )
