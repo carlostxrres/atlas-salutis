@@ -18,6 +18,9 @@ export default defineConfig({
     title: 'Atlas Salutis',
     plugins: [starlightThemeNext()],
     customCss: ['./src/styles/global.css'],
+    components: {
+      PageTitle: './src/overrides/PageTitle.astro',
+    },
     sidebar: [
       { label: 'Personas', link: '/people/' },
       { label: 'Entrevistas', link: '/interviews/' },

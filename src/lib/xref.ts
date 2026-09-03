@@ -31,6 +31,16 @@ export async function getPostsForPerson(personId: string): Promise<PostEntry[]> 
   return [...new Map(refs.map((ref) => [ref.post.id, ref.post])).values()];
 }
 
+// Deduplicated ids of every person cited across a post's sources[], in order
+// of first appearance. Used to render the post's Authors header.
+export function getAuthorsForPost(post: PostEntry): string[] {
+  const seen = new Set<string>();
+  for (const source of post.data.sources) {
+    for (const personId of source.personIds) seen.add(personId);
+  }
+  return [...seen];
+}
+
 export async function getInterviewsForPerson(personId: string) {
   const interviews = await getCollection('interviews');
   return interviews.filter(

@@ -1,0 +1,22 @@
+---
+import { getEntry } from 'astro:content';
+import AuthorHeaderList, { type AuthorSummary } from './AuthorHeaderList';
+
+interface Props {
+  // Deduplicated person ids, e.g. from `getAuthorsForPost()` in `@/lib/xref`.
+  personIds: string[];
+}
+
+const { personIds } = Astro.props;
+
+const people: AuthorSummary[] = (await Promise.all(personIds.map((id) => getEntry('people', id))))
+  .filter((person) => person !== undefined)
+  .map((person) => ({
+    id: person.id,
+    name: person.data.name,
+    profession: person.data.profession,
+    photo: person.data.photo,
+  }));
+---
+
+<AuthorHeaderList people={people} />

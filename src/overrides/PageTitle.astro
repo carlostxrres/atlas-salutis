@@ -1,0 +1,14 @@
+---
+// Overrides Starlight's default PageTitle to add the Authors header right
+// below the title, for posts only (pages outside `posts/**` parse `sources`
+// as `[]` via the schema default, so they render nothing extra here).
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import AuthorHeader from '@/components/AuthorHeader.astro';
+import { getAuthorsForPost } from '@/lib/xref';
+
+const { entry } = Astro.locals.starlightRoute;
+const authorIds = getAuthorsForPost(entry);
+---
+
+<Default {...Astro.props} />
+{authorIds.length > 0 && <AuthorHeader personIds={authorIds} />}
