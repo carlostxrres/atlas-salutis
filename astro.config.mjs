@@ -27,6 +27,7 @@ export default defineConfig({
     },
     components: {
       PageTitle: './src/overrides/PageTitle.astro',
+      ThemeSelect: './src/overrides/ThemeSelect.astro',
     },
     sidebar: [
       { label: 'Personas', link: '/people/' },

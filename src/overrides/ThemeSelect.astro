@@ -1,0 +1,93 @@
+---
+// Restyles Starlight's default ThemeSelect with our tokens. The behavior
+// script below is copied verbatim from
+// @astrojs/starlight/components/ThemeSelect.astro — it only needs a native
+// <select> as a descendant of <starlight-theme-select>, so the markup can be
+// freely restyled without touching how theme persistence/switching works.
+import { IconDeviceLaptop, IconChevronDown } from '@tabler/icons-react';
+
+const { t } = Astro.locals;
+const options = [
+  { label: t('themeSelect.dark'), value: 'dark', selected: false },
+  { label: t('themeSelect.light'), value: 'light', selected: false },
+  { label: t('themeSelect.auto'), value: 'auto', selected: true },
+];
+---
+
+<starlight-theme-select>
+  <label
+    class="border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground relative inline-flex h-9 items-center gap-1.5 rounded-md border px-2.5 text-sm transition-colors"
+  >
+    <span class="sr-only">{t('themeSelect.accessibleLabel')}</span>
+    <IconDeviceLaptop className="size-4" />
+    <select
+      autocomplete="off"
+      class="min-w-[4.5rem] cursor-pointer appearance-none bg-transparent pr-4 text-sm outline-none"
+    >
+      {options.map(({ value, selected, label }) => <option value={value} selected={selected} set:html={label} />)}
+    </select>
+    <IconChevronDown className="text-muted-foreground pointer-events-none absolute right-2.5 size-3.5" />
+  </label>
+</starlight-theme-select>
+
+{/* Inlined to avoid FOUC. Uses global scope from `ThemeProvider.astro` */}
+<script is:inline>
+  StarlightThemeProvider.updatePickers();
+</script>
+
+<script>
+  // Set by ThemeProvider.astro's inline script (not overridden here). Its
+  // own ambient type lives in @astrojs/starlight/global.d.ts, but that file
+  // is a module (has a top-level `export`) and isn't auto-included outside
+  // the package, so it's redeclared locally.
+  declare const StarlightThemeProvider: { updatePickers(theme?: string): void };
+
+  type Theme = 'auto' | 'dark' | 'light';
+
+  /** Key in `localStorage` to store color theme preference at. */
+  const storageKey = 'starlight-theme';
+
+  /** Get a typesafe theme string from any JS value (unknown values are coerced to `'auto'`). */
+  const parseTheme = (theme: unknown): Theme =>
+    theme === 'auto' || theme === 'dark' || theme === 'light' ? theme : 'auto';
+
+  /** Load the user's preference from `localStorage`. */
+  const loadTheme = (): Theme =>
+    parseTheme(typeof localStorage !== 'undefined' && localStorage.getItem(storageKey));
+
+  /** Store the user's preference in `localStorage`. */
+  function storeTheme(theme: Theme): void {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(storageKey, theme === 'light' || theme === 'dark' ? theme : '');
+    }
+  }
+
+  /** Get the preferred system color scheme. */
+  const getPreferredColorScheme = (): Theme =>
+    matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+
+  /** Update select menu UI, document theme, and local storage state. */
+  function onThemeChange(theme: Theme): void {
+    StarlightThemeProvider.updatePickers(theme);
+    document.documentElement.dataset.theme = theme === 'auto' ? getPreferredColorScheme() : theme;
+    storeTheme(theme);
+  }
+
+  // React to changes in system color scheme.
+  matchMedia(`(prefers-color-scheme: light)`).addEventListener('change', () => {
+    if (loadTheme() === 'auto') onThemeChange('auto');
+  });
+
+  class StarlightThemeSelect extends HTMLElement {
+    constructor() {
+      super();
+      onThemeChange(loadTheme());
+      this.querySelector('select')?.addEventListener('change', (e) => {
+        if (e.currentTarget instanceof HTMLSelectElement) {
+          onThemeChange(parseTheme(e.currentTarget.value));
+        }
+      });
+    }
+  }
+  customElements.define('starlight-theme-select', StarlightThemeSelect);
+</script>
