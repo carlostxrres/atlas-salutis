@@ -2,6 +2,8 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { getCollection, render } from 'astro:content';
 import { getPostsForPerson, getPersonReferenceCount, getInterviewsForPerson } from '@/lib/xref';
+import PersonProfileHeader from '@/components/PersonProfileHeader';
+import LinkCardList, { type LinkCardItem } from '@/components/LinkCardList';
 
 export async function getStaticPaths() {
   const people = await getCollection('people');
@@ -16,37 +18,34 @@ const [posts, referenceCount, interviews] = await Promise.all([
   getPersonReferenceCount(person.id),
   getInterviewsForPerson(person.id),
 ]);
+
+const interviewItems: LinkCardItem[] = interviews.map((interview) => ({
+  href: `/interviews/${interview.id}/`,
+  title: interview.data.title,
+  description: `${interview.data.channel} · ${interview.data.date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}`,
+}));
+
+const postItems: LinkCardItem[] = posts.map((post) => ({
+  href: `/${post.id}/`,
+  title: post.data.title,
+  description: post.data.description,
+}));
 ---
 
 <StarlightPage frontmatter={{ title: person.data.name, description: person.data.profession }}>
-  <p>{person.data.profession}</p>
+  <PersonProfileHeader
+    name={person.data.name}
+    role={person.data.role}
+    profession={person.data.profession}
+    photo={person.data.photo}
+    links={person.data.links}
+  />
+
   <Content />
 
-  {person.data.links && (
-    <ul>
-      {person.data.links.website && (
-        <li><a href={person.data.links.website}>Sitio web</a></li>
-      )}
-      {person.data.links.youtube && (
-        <li><a href={person.data.links.youtube}>YouTube</a></li>
-      )}
-      {person.data.links.instagram && (
-        <li><a href={person.data.links.instagram}>Instagram</a></li>
-      )}
-    </ul>
-  )}
-
   <h2>Entrevistas ({interviews.length})</h2>
-  <ul>
-    {interviews.map((interview) => (
-      <li><a href={`/interviews/${interview.id}/`}>{interview.data.title}</a></li>
-    ))}
-  </ul>
+  <LinkCardList items={interviewItems} emptyLabel="Sin entrevistas todavía." />
 
   <h2>Posts que le referencian ({posts.length}, {referenceCount} citas en total)</h2>
-  <ul>
-    {posts.map((post) => (
-      <li><a href={`/${post.id}/`}>{post.data.title}</a></li>
-    ))}
-  </ul>
+  <LinkCardList items={postItems} emptyLabel="Sin posts todavía." />
 </StarlightPage>

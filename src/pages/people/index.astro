@@ -2,16 +2,22 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { getCollection } from 'astro:content';
 import PeopleSearch, { type PersonSummary } from '@/components/PeopleSearch';
+import { getPostsForPerson } from '@/lib/xref';
 
 const people = await getCollection('people');
-const summaries: PersonSummary[] = people
-  .map((person) => ({
-    id: person.id,
-    name: person.data.name,
-    role: person.data.role,
-    profession: person.data.profession,
-  }))
-  .sort((a, b) => a.name.localeCompare(b.name));
+const summaries: PersonSummary[] = (
+  await Promise.all(
+    people.map(async (person) => ({
+      id: person.id,
+      name: person.data.name,
+      role: person.data.role,
+      profession: person.data.profession,
+      bio: person.data.bio,
+      photo: person.data.photo,
+      postCount: (await getPostsForPerson(person.id)).length,
+    })),
+  )
+).sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <StarlightPage frontmatter={{ title: 'Personas' }}>
