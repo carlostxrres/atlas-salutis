@@ -43,6 +43,21 @@ sources:
     personIds: [ivan-perujo]
     quote: "Viendo el último pesaje de la UFC, uno de los peleadores, según hizo el pesaje, dio dos pasos y se cayó, porque están al límite. Luego ya se ponen a comer y recuperan de un día a otro siete u ocho kilos."
     timestamp: "00:56:51"
+  - id: src-andonova-hidratacion-1
+    interview: sergio-begueria-entrevista-yor-andonova
+    personIds: [yor-andonova]
+    quote: "Cuando hay problemas digestivos, tienes que sacar el agua de la comida. No es recomendable beber mucha agua con las comidas porque te diluyen los jugos gástricos. Eso le cuesta al estómago más hacer la digestión."
+    timestamp: "00:54:32"
+  - id: src-andonova-hidratacion-2
+    interview: sergio-begueria-entrevista-yor-andonova
+    personIds: [yor-andonova]
+    quote: "El problema lo tiene la gente que no bebe suficiente agua, porque nosotros somos un 80% agua. Nuestras mucosas son un 90% agua: la gente que no bebe agua no tiene mucosas, tiene sequedad de ojos, boca seca, todo seco."
+    timestamp: "00:54:58"
+  - id: src-andonova-hidratacion-3
+    interview: sergio-begueria-entrevista-yor-andonova
+    personIds: [yor-andonova]
+    quote: "Depende del deporte que hagas, la verdura que comas. Entre 1,5 y 2 litros suele ser lo general."
+    timestamp: "00:55:30"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -77,6 +92,22 @@ conviene beber poco
 Su rutina personal empieza en ayunas con dos o tres vasos de agua con sal y
 limón
 <SourcePopover ids={["src-perujo-hidratacion-5"]} sources={frontmatter.sources} />.
+
+Yor Andonova llega a la misma pauta desde la digestión y explica el mecanismo:
+el agua diluye los jugos gástricos, así que tomar mucha durante la comida
+dificulta al estómago hacer su trabajo. Su indicación es la misma —sacar el
+agua de la comida—, con una precisión importante: eso no es beber menos, es
+cambiar el momento
+<SourcePopover ids={["src-andonova-hidratacion-1"]} sources={frontmatter.sources} />.
+Su referencia de cantidad diaria es más conservadora que la de Perujo, entre
+1,5 y 2 litros, variable según deporte y verdura consumida
+<SourcePopover ids={["src-andonova-hidratacion-3"]} sources={frontmatter.sources} />.
+
+Y pone el error contrario, el que en su experiencia es más común: no beber
+suficiente. Lo argumenta desde la composición del cuerpo —somos un 80% agua, y
+las mucosas un 90%— y desde el síntoma que menos se asocia a ello: sequedad de
+ojos y boca son, en su lectura, falta de agua antes que cualquier otra cosa
+<SourcePopover ids={["src-andonova-hidratacion-2"]} sources={frontmatter.sources} />.
 
 ## Qué papel le atribuye
 
