@@ -26,6 +26,7 @@ export default defineConfig({
     locales: {
       root: { label: 'Español', lang: 'es' },
     },
+    social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/carlostxrres/atlas-salutis' }],
     plugins: [
       starlightThemeNext(),
       starlightImageZoom(),
