@@ -42,7 +42,7 @@ export const onRequest = defineRouteMiddleware((context) => {
   const { starlightRoute } = context.locals;
 
   const overviewItem = starlightRoute.toc?.items[0];
-  if (overviewItem) overviewItem.text = '';
+  if (overviewItem) overviewItem.text = 'Inicio';
 
   starlightRoute.head.push(
     { tag: 'style', content: READING_PROGRESS_STYLE },
