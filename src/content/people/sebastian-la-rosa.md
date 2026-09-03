@@ -2,6 +2,7 @@
 name: Sebastián La Rosa
 role: interviewee
 profession: Médico, divulgador de longevidad y medicina funcional
+photo: /people/sebastian-la-rosa.webp
 bio: |
   Médico argentino formado en la Universidad del Salvador y profesor de
   medicina desde los 23 años. Estudió también homeopatía y medicina china,
