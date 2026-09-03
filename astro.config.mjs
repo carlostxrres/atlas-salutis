@@ -21,7 +21,11 @@ export default defineConfig({
     sidebar: [
       { label: 'Personas', link: '/people/' },
       { label: 'Entrevistas', link: '/interviews/' },
-      { label: 'Posts', items: [{ autogenerate: { directory: 'posts' } }] },
+      { label: 'Alimentación', items: [{ autogenerate: { directory: 'posts/alimentacion' } }] },
+      { label: 'Entrenamiento y movimiento', items: [{ autogenerate: { directory: 'posts/entrenamiento' } }] },
+      { label: 'Sueño y descanso', items: [{ autogenerate: { directory: 'posts/sueno' } }] },
+      { label: 'Peso, metabolismo y hormonas', items: [{ autogenerate: { directory: 'posts/metabolismo' } }] },
+      { label: 'Mente y hábitos', items: [{ autogenerate: { directory: 'posts/habitos' } }] },
     ],
   }), react(), mdx(), d2({
     inline: true,
