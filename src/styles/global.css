@@ -126,6 +126,7 @@
 
 [data-d2-version] {
   max-height: min(80dvh, 600px);
+  margin-inline: auto;
 }
 
 /* Starlight's default `.pagination-links` grid (auto-fit, minmax(18rem,...))
@@ -231,4 +232,9 @@
 
 .site-title:hover {
   opacity: 0.75;
+}
+
+/**/
+::selection {
+  background-color: var(--sl-color-accent-low);
 }
