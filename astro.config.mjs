@@ -19,6 +19,12 @@ export default defineConfig({
     title: 'Atlas Salutis',
     plugins: [starlightThemeNext()],
     customCss: ['./src/styles/global.css'],
+    favicon: '/favicon.svg',
+    logo: {
+      light: './src/assets/logo-light.svg',
+      dark: './src/assets/logo-dark.svg',
+      alt: 'Atlas Salutis',
+    },
     components: {
       PageTitle: './src/overrides/PageTitle.astro',
     },
