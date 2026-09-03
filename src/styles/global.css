@@ -30,6 +30,35 @@
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
   --radius: 0.625rem;
+  /* Starlight's own native color system (search, asides, badges, sidebar
+     text...) — overridden to our terracotta + neutral theme instead of its
+     default vivid blue. Values computed from actual OKLCH conversion of the
+     brand hex colors (terracotta hue ~40.6°) and of Starlight's own default
+     gray ramp (hue ~265°, which turns out to already match our ShadCn slate
+     tokens closely — no need for a third competing neutral hue). accent-low
+     is the pale background-tint tier, accent-high the high-contrast text
+     tier; accent itself is unchanged from what was already here. Note this
+     block keeps our project's :root=light / [data-theme=dark]=dark
+     convention — Starlight's own default stylesheet uses the opposite
+     (unscoped :root=dark), so don't copy that selector structure verbatim
+     from their source or these values collide with themselves. */
+  --sl-color-accent-low: #e5d2cc;
+  --sl-color-accent: #985943;
+  --sl-color-accent-high: #462a21;
+  --sl-color-white: #191817;
+  --sl-color-gray-1: #292625;
+  --sl-color-gray-2: #3b3736;
+  --sl-color-gray-3: #5b5756;
+  --sl-color-gray-4: #8e8a89;
+  --sl-color-gray-5: #c3c1c1;
+  --sl-color-gray-6: #efeded;
+  --sl-color-gray-7: #f7f6f6;
+  --sl-color-black: #ffffff;
+  /* Subtle terracotta-tinted avatar background (initials fallback), same
+     hue as --sl-color-accent but pushed light/low-chroma for a background
+     rather than an ink color. */
+  --avatar: oklch(0.94 0.035 40.6);
+  --avatar-foreground: var(--sl-color-accent);
 }
 
 :root[data-theme='dark'] {
@@ -51,6 +80,21 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
+  --sl-color-accent-low: #311f19;
+  --sl-color-accent: #955741;
+  --sl-color-accent-high: #dbc3ba;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #efeded;
+  --sl-color-gray-2: #c3c1c1;
+  --sl-color-gray-3: #8e8a89;
+  --sl-color-gray-4: #5b5756;
+  --sl-color-gray-5: #3b3736;
+  --sl-color-gray-6: #292625;
+  --sl-color-black: #191817;
+  /* Darker, warm-tinted counterpart of the light-theme avatar background —
+     noticeably lighter than --background so it still reads as a surface. */
+  --avatar: oklch(0.3 0.045 46.58);
+  --avatar-foreground: var(--sl-color-accent);
 }
 
 @theme inline {
@@ -68,6 +112,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-avatar: var(--avatar);
+  --color-avatar-foreground: var(--avatar-foreground);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -106,6 +152,7 @@
   .sl-markdown-content .sl-anchor-link {
     opacity: 0.45;
   }
+
   .sl-markdown-content .sl-anchor-link:focus,
   .sl-markdown-content .sl-heading-wrapper:hover .sl-anchor-link {
     opacity: 1;
