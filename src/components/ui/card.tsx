@@ -22,6 +22,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
 
 function CardDescription({ className, ...props }: React.ComponentProps<'div'>) {
   return (
+    // This has margin top:
     <div data-slot="card-description" className={cn('text-sm text-muted-foreground', className)} {...props} />
   );
 }

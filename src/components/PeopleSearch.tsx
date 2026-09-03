@@ -19,7 +19,8 @@ function PersonCard({ person }: { person: PersonSummary }) {
     <a href={`/people/${person.id}/`} className="block h-full no-underline">
       <Card className="h-full transition-colors hover:border-ring">
         <CardContent className="flex h-full flex-col gap-3 pt-4">
-          <div className="flex items-center gap-3">
+          {/* I changed this to items-start because I prefer it this way */}
+          <div className="flex items-start gap-3">
             <Avatar className="size-12">
               {person.photo ? (
                 <AvatarImage src={person.photo} alt={person.name} />
@@ -33,9 +34,11 @@ function PersonCard({ person }: { person: PersonSummary }) {
             </div>
           </div>
 
+          {/* This has margin top: */}
           <p className="line-clamp-3 text-sm text-muted-foreground">{person.bio}</p>
 
           {person.postCount > 0 && (
+            // This has margin top:
             <p className="text-muted-foreground mt-auto text-xs">
               {person.postCount} {person.postCount === 1 ? 'post' : 'posts'}
             </p>
@@ -77,7 +80,7 @@ export default function PeopleSearch({ people }: { people: PersonSummary[] }) {
   );
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="not-content flex flex-col gap-8">
       <Input
         type="search"
         placeholder="Buscar por nombre o profesión..."

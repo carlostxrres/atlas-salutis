@@ -23,7 +23,7 @@ export default function InterviewsSearch({ interviews }: { interviews: Interview
   }, [interviews, query]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="not-content flex flex-col gap-4">
       <Input
         type="search"
         placeholder="Buscar por título o canal..."
@@ -34,18 +34,18 @@ export default function InterviewsSearch({ interviews }: { interviews: Interview
       <div className="grid gap-3">
         {filtered.map((interview) => (
           <a key={interview.id} href={`/interviews/${interview.id}/`}>
-            <Card className="transition-colors hover:border-slate-400 dark:hover:border-slate-500">
+            <Card className="transition-colors hover:border-ring">
               <CardContent className="flex flex-col gap-1 pt-4">
                 <CardTitle>{interview.title}</CardTitle>
                 <CardDescription>
                   {interview.channel} · {interview.date}
                 </CardDescription>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{interview.summary}</p>
+                <p className="text-muted-foreground text-sm">{interview.summary}</p>
               </CardContent>
             </Card>
           </a>
         ))}
-        {filtered.length === 0 && <p className="text-sm text-slate-500">No se encontraron entrevistas.</p>}
+        {filtered.length === 0 && <p className="text-muted-foreground text-sm">No se encontraron entrevistas.</p>}
       </div>
     </div>
   );
