@@ -184,6 +184,14 @@ thematic subfolders — + reading just the frontmatter of each. For every candid
   path.
 - Claims you judged as noise in Step 3 simply aren't written anywhere — that
   filtering already happened.
+- Posts stay mostly text. A ```d2``` fenced block (rendered by the astro-d2
+  integration) is worth adding only when a claim describes a cycle, causal
+  chain, or process genuinely clearer as a diagram than as prose — not as
+  decoration, and not on every post. When a diagram has one relationship
+  that matters more than its neighbors (the edge that drives the cycle, the
+  step that gates the rest), mark that single edge `{style.animated: true}`
+  to draw the eye to it; leave ordinary edges unstyled. Don't animate more
+  than one or two edges in the same diagram, or the emphasis is lost.
 
 ## Step 7 — Cite sources
 
