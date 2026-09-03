@@ -14,6 +14,7 @@ import mdx from '@astrojs/mdx';
 import d2 from 'astro-d2';
 
 export default defineConfig({
+  site: 'https://atlassalutis.netlify.app',
   integrations: [starlight({
     title: 'Atlas Salutis',
     plugins: [starlightThemeNext()],
