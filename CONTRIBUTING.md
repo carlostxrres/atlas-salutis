@@ -76,6 +76,31 @@ commit (`content(reorg): ...`), separado de cualquier edición de contenido en
 el mismo post. Así la detección de renombrados de git funciona de forma fiable
 y los diffs se mantienen legibles.
 
+## Componentes ShadCn y overrides de Starlight
+
+Los componentes UI viven en `src/components/ui/` (alias `shadcn add`, ver
+`components.json`) y usan tokens semánticos (`bg-card`, `text-muted-foreground`,
+`border-input`...) definidos en `src/styles/global.css`, no clases de color
+directas (`bg-slate-900`). Un componente nuevo debe seguir el mismo patrón:
+así el tema claro/oscuro se resuelve solo, sin `dark:` repetido por todas
+partes.
+
+Starlight expone `data-theme='light'|'dark'` en `<html>` (nunca `'auto'`, lo
+resuelve antes de escribirlo) en vez de una clase `.dark`; por eso
+`global.css` redefine la variante `dark:` de Tailwind con
+`@custom-variant dark` apuntando a `[data-theme='dark']`. Cualquier color que
+no sea uno de los tokens del tema debe usar esa variante en vez de
+`prefers-color-scheme`.
+
+Los [overrides de componentes de Starlight](https://starlight.astro.build/reference/overrides/)
+se registran en la clave `components` de `starlight()` en `astro.config.mjs`,
+apuntando a ficheros en `src/overrides/` (crear la carpeta al añadir el
+primer override). De la lista completa de componentes sobreescribibles, los
+candidatos identificados hasta ahora son `ThemeSelect` y `LanguageSelect`
+(rehacerlos con ShadCn); el home tipo revista no necesita override de `Hero`
+porque Starlight ya soporta un hero vía frontmatter (`hero:` en el
+frontmatter de la página), reforzado por `starlight-theme-next`.
+
 ## Pipeline de ingesta de entrevistas
 
 `scripts/fetch-transcript.ts` (usado por la skill `.claude/skills/ingest-interview/`)
