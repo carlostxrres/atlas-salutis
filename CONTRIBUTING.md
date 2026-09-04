@@ -53,6 +53,7 @@ grupo del sidebar aparece el post:
 | `sueno` | Sueño y descanso | Dormir: calidad, ritmos, entorno, insomnio |
 | `metabolismo` | Peso, metabolismo y hormonas | Qué mide el cuerpo: composición corporal, analítica, hormonas |
 | `habitos` | Mente y hábitos | Por qué se sostiene o se abandona: adherencia, estrés, salud mental |
+| `piel` | Piel y envejecimiento | La piel como órgano: sol, fotoenvejecimiento, cáncer cutáneo, dermatología |
 
 Al crear un post nuevo hay que elegir una de las cinco. Si un tema encaja en
 dos, decide el eje principal del post: *Cómo perder grasa* va en

@@ -53,6 +53,7 @@ export default defineConfig({
       { label: 'Sueño y descanso', collapsed: true, items: [{ autogenerate: { directory: 'posts/sueno' } }] },
       { label: 'Peso, metabolismo y hormonas', collapsed: true, items: [{ autogenerate: { directory: 'posts/metabolismo' } }] },
       { label: 'Mente y hábitos', collapsed: true, items: [{ autogenerate: { directory: 'posts/habitos' } }] },
+      { label: 'Piel y envejecimiento', collapsed: true, items: [{ autogenerate: { directory: 'posts/piel' } }] },
     ],
   }), react(), mdx(), d2({
     inline: true,
