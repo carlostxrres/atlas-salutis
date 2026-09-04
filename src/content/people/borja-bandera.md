@@ -1,6 +1,6 @@
 ---
 name: Borja Bandera
-role: interviewer
+role: both
 profession: Médico especialista en endocrinología y nutrición
 bio: |
   Médico español especialista en endocrinología y nutrición, divulgador de
