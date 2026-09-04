@@ -73,6 +73,31 @@ sources:
     personIds: [germaine-escames]
     quote: "Una sola molécula de melatonina puede eliminar entre cuatro y cinco radicales libres. Y en la piel encontramos también sus metabolitos, el AFMK y el AMK, que son incluso más potentes que la propia melatonina para contrarrestar el estrés oxidativo."
     timestamp: "00:04:16"
+  - id: src-acuna-luz-1
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [dario-acuna-castroviejo]
+    quote: "La luz blanca nos bloquea la melatonina porque tiene un componente azul entre 460 y 480 nanómetros de longitud de onda. La luz cálida no tiene ese componente. Por eso en el hábitat natural, conforme el sol se va poniendo, la luz deja de ser blanca, pasa a ser cálida, anaranjada, rojiza, y ahí empieza la producción de melatonina."
+    timestamp: "00:12:34"
+  - id: src-acuna-luz-2
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [dario-acuna-castroviejo]
+    quote: "Desde la revolución industrial. Antes había luces, pero eran luces más cálidas, con una longitud de onda que no afectaba a la producción de melatonina."
+    timestamp: "00:12:10"
+  - id: src-acuna-luz-3
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [dario-acuna-castroviejo]
+    quote: "Hay una deuda de unas 2 horas de sueño en toda la población mundial a causa de este exceso de luz por la tarde noche, del cambio de horario que tenemos, la iluminación ambiental y luego las tablets y los móviles hasta las tantas de la noche."
+    timestamp: "00:13:45"
+  - id: src-acuna-luz-4
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [dario-acuna-castroviejo]
+    quote: "La melatonina es el mensajero de la oscuridad porque se produce por la noche. La vitamina D es el mensajero del día. Quizá la vitamina D activa más el sistema inmunitario y la melatonina actúa como un freno para que no se desboque."
+    timestamp: "00:09:55"
+  - id: src-escames-luz-1
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [germaine-escames]
+    quote: "Si tú por la noche enciendes la luz o te quedas viendo el móvil, se bloquea la síntesis de melatonina. Hay una vía polisináptica que conecta la retina con la glándula pineal, de tal forma que cuando hay luz se bloquea esa vía."
+    timestamp: "00:05:16"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -162,14 +187,45 @@ calle durante el día, ir andando a los sitios y entrenar. Eso mueve la
 melatonina nocturna mucho más que optimizar el tipo de bombilla
 <SourcePopover ids={["src-larosa-luz-8"]} sources={frontmatter.sources} />.
 
-## Ver también
+## Qué longitud de onda es exactamente la que bloquea
 
-- El resto de variables del descanso —horas, regularidad, despertar— en
-  [Calidad del sueño](/posts/sueno/calidad-del-sueno/).
-- La luz como cuerda del reloj biológico, y cómo desplazarlo con fototerapia,
-  en [Ritmos circadianos y cronotipos](/posts/sueno/ritmos-circadianos-y-cronotipos/).
-- Oscuridad, antifaz y demás condiciones de la habitación, en
-  [El entorno para dormir](/posts/sueno/entorno-para-dormir/).
+Darío Acuña pone número al componente responsable: la luz blanca bloquea la
+melatonina porque contiene **azul entre 460 y 480 nanómetros**. La luz cálida no
+lleva ese componente, y por eso el atardecer natural —blanco que se vuelve
+anaranjado y rojizo— es la señal que abre la producción de melatonina
+<SourcePopover ids={["src-acuna-luz-1"]} sources={frontmatter.sources} />.
+
+Ese dato acota el matiz de La Rosa que aparece más arriba: la luz cálida no es
+inocua, pero el mecanismo concreto que se describe aquí es el del azul. Y sitúa
+el origen del problema en la revolución industrial: antes también había luces,
+pero eran cálidas
+<SourcePopover ids={["src-acuna-luz-2"]} sources={frontmatter.sources} />.
+
+Germaine Escames describe el circuito: una **vía polisináptica** conecta la
+retina con la glándula pineal, y cuando llega luz, esa vía se bloquea. Encender
+la luz de noche o mirar el móvil interrumpe la síntesis en el acto
+<SourcePopover ids={["src-escames-luz-1"]} sources={frontmatter.sources} />.
+
+## Dos horas de deuda de sueño en toda la población
+
+La estimación que hace Acuña del coste agregado es concreta: **unas dos horas de
+sueño menos de las que deberíamos dormir**, en la población mundial, por la suma
+de tres cosas —el exceso de luz de tarde-noche, el cambio de horario estacional
+y las pantallas hasta tarde
+<SourcePopover ids={["src-acuna-luz-3"]} sources={frontmatter.sources} />.
+
+## Melatonina y vitamina D como pareja
+
+Un apunte que ordena dos hormonas que este sitio trata por separado. Acuña las
+describe como opuestas y complementarias: la melatonina es **el mensajero de la
+oscuridad**, la vitamina D **el mensajero del día**. Ambas son muy
+pleiotrópicas, y sobre la inmunidad se reparten el papel —**la vitamina D activa
+el sistema inmunitario y la melatonina lo frena para que no se desboque**
+<SourcePopover ids={["src-acuna-luz-4"]} sources={frontmatter.sources} />.
+
+Leído al derecho, es un argumento a favor de lo mismo que dice el resto del
+post: **luz de día, oscuridad de noche**. Los detalles de la otra mitad, en
+[Vitamina D](/posts/alimentacion/vitamina-d/).
 
 ## Hay dos melatoninas, no una
 
@@ -198,3 +254,14 @@ La distinción importa para leer bien el resto del sitio: lo que la luz nocturna
 suprime es **la pineal**, y eso afecta al sueño y a los ritmos. El desarrollo de
 la extrapineal, y su uso tópico, está en
 [Melatonina en la piel y el pelo](/posts/piel/melatonina-y-piel/).
+
+## Ver también
+
+- El resto de variables del descanso —horas, regularidad, despertar— en
+  [Calidad del sueño](/posts/sueno/calidad-del-sueno/).
+- La luz como cuerda del reloj biológico, y cómo desplazarlo con fototerapia,
+  en [Ritmos circadianos y cronotipos](/posts/sueno/ritmos-circadianos-y-cronotipos/).
+- Oscuridad, antifaz y demás condiciones de la habitación, en
+  [El entorno para dormir](/posts/sueno/entorno-para-dormir/).
+- Cuándo y cómo se toma la melatonina exógena sin desordenar el reloj, en
+  [Suplementos de melatonina](/posts/sueno/suplementos-de-melatonina/).
