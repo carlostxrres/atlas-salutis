@@ -48,6 +48,16 @@ sources:
     personIds: [antonio-hernandez]
     quote: "Yo no soy muy partidario de mirar ese tipo de pruebas, porque pueden ser una espada de Damocles. Yo puedo tener unos polimorfismos genéticos que me predisponen, pero luego está la epigenética, que hace tu contexto, lo que comes, cómo entrenas, tus emociones, para que esos genes se expresen o no."
     timestamp: "01:45:06"
+  - id: src-mas-analitica-1
+    interview: borja-bandera-entrevista-antonio-mas-cortisol
+    personIds: [antonio-mas]
+    quote: "Cada semana tengo un paciente al que algún entrenador o algún gurú de turno le ha pedido el cortisol en ayunas, y como sale alto me lo mandan para que diagnostiquemos un exceso. El cortisol alto no se diagnostica con un cortisol en ayunas bajo ningún concepto: es imposible."
+    timestamp: "00:35:35"
+  - id: src-mas-analitica-2
+    interview: borja-bandera-entrevista-antonio-mas-cortisol
+    personIds: [antonio-mas]
+    quote: "Por la mañana en ayunas no vale mirarlo, porque es cuando más alto está: si está alto puede ser por un estrés, porque ha dormido mal, y poco más."
+    timestamp: "00:36:24"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -107,6 +117,21 @@ convertirse en una vigilancia ansiosa permanente. La epigenética —lo que se
 come, cómo se entrena, cómo se duerme, el estado emocional— determina si esos
 genes llegan a expresarse
 <SourcePopover ids={["src-hernandez-analitica-9"]} sources={frontmatter.sources} />.
+
+## Un parámetro que casi siempre se pide mal
+
+El caso más ilustrativo de que **un valor solo significa algo junto al momento
+en que se midió** es el cortisol. Antonio Mas cuenta que cada semana recibe a
+alguien a quien un entrenador o un divulgador le pidió un cortisol en ayunas
+que salió alto, y lo remite para diagnosticar un exceso
+<SourcePopover ids={["src-mas-analitica-1"]} sources={frontmatter.sources} />.
+
+El problema es que a primera hora de la mañana **el cortisol tiene que estar
+alto**: es parte de lo que nos despierta. Un valor elevado ahí puede reflejar
+simplemente estrés o una mala noche, y no permite concluir nada
+<SourcePopover ids={["src-mas-analitica-2"]} sources={frontmatter.sources} />.
+Qué pruebas sí sirven —orina de 24 horas, saliva nocturna, test de supresión—
+está en [Cortisol](/posts/metabolismo/cortisol/).
 
 ## Ver también
 
