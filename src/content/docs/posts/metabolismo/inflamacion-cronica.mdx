@@ -98,6 +98,36 @@ sources:
     personIds: [miodrag-borges]
     quote: "Personas que llegan a altas edades con estilos de vida muy mejorables suelen haber tenido sobre todo vidas muy activas: esta persona de campo que se sigue levantando por la mañana y sigue trabajando, aunque después se tome el vino. Y suelen ser personas con lazos sociales muy fuertes."
     timestamp: "00:39:28"
+  - id: src-escames-inflamacion-1
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [germaine-escames]
+    quote: "La melatonina es la única molécula que inhibe las dos vías de la inmunidad innata. Los corticoides solamente inhiben la vía de NF-kB, una sola vía de las dos. La melatonina inhibe las dos: NF-kB y el inflamasoma NLRP3."
+    timestamp: "01:00:17"
+  - id: src-escames-inflamacion-2
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [germaine-escames]
+    quote: "Lo hemos visto en la COVID: de qué se morían los pacientes, de la reacción inflamatoria, de esa tormenta de citoquinas a la que los corticoides no eran suficientes."
+    timestamp: "01:00:51"
+  - id: src-escames-inflamacion-3
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [germaine-escames]
+    quote: "Cuando se dañan las células madre, estas células se pueden convertir en senescentes: dejan de dividirse y empiezan a secretar factores inflamatorios alrededor, dañando a las células que están alrededor. Son muy parecidas a las tumorales en que son resistentes a la apoptosis: no mueren."
+    timestamp: "00:16:09"
+  - id: src-escames-inflamacion-4
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [germaine-escames]
+    quote: "El problema con los fármacos senolíticos es que al día de hoy no hay ninguno realmente efectivo, porque los fármacos que eliminan las células senescentes dañan también las células sanas: no saben diferenciar."
+    timestamp: "00:17:29"
+  - id: src-escames-inflamacion-5
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [germaine-escames]
+    quote: "Estamos viendo que la melatonina protege las células sanas pero también induce la muerte de la célula senescente. Es como si estuvieran lanzando bombas continuamente: la melatonina elimina esas bombas y además se carga el disparador."
+    timestamp: "00:18:47"
+  - id: src-escames-inflamacion-6
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [germaine-escames]
+    quote: "Yo cuando leo o escucho que alguien ya va a curar un cáncer porque lo ha visto en ratones, no, no, no. En la clínica hay que ser muy cauto. De todos los ensayos clínicos el porcentaje de éxito es muy pequeño. Maravillosos resultados, sí, pero en modelos experimentales."
+    timestamp: "01:30:12"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -238,6 +268,49 @@ glicar proteínas es, según cita, **miles de veces mayor que la de la glucosa o
 la fructosa**, y al que casi no se presta atención frente a la obsesión con la
 glucemia
 <SourcePopover ids={["src-borges-inflamacion-15"]} sources={frontmatter.sources} />.
+
+## Las dos vías de la inmunidad innata
+
+Germaine Escames aporta una distinción mecanística que encaja con el argumento
+central de este post —que «la inflamación» en singular es un error. La respuesta
+inflamatoria innata tiene **dos vías**: **NF-κB** y el **inflamasoma NLRP3**.
+
+Su afirmación es que **los corticoides inhiben solo una de las dos**, NF-κB, y
+que la melatonina es la única molécula conocida que inhibe las dos
+<SourcePopover ids={["src-escames-inflamacion-1"]} sources={frontmatter.sources} />.
+El ejemplo clínico que usa para justificar por qué eso importa es la tormenta de
+citoquinas de la COVID, donde los corticoides no bastaban
+<SourcePopover ids={["src-escames-inflamacion-2"]} sources={frontmatter.sources} />.
+
+Sirve para leer mejor cualquier promesa antiinflamatoria: **el problema no suele
+ser la falta de potencia, sino que se está bloqueando media respuesta**.
+
+## Células senescentes: quién enciende la inflamación de fondo
+
+La otra pieza que añade explica de dónde sale parte de la inflamación crónica de
+bajo grado. Cuando se dañan las células madre, algunas se vuelven
+**senescentes**: dejan de dividirse pero **siguen secretando factores
+inflamatorios** que dañan a sus vecinas. Y son resistentes a la apoptosis, igual
+que las tumorales: no se mueren
+<SourcePopover ids={["src-escames-inflamacion-3"]} sources={frontmatter.sources} />.
+
+Su imagen —lanzan bombas continuamente— es literal en cuanto al efecto sobre el
+microambiente. El problema práctico es que **no hay ningún fármaco senolítico
+realmente efectivo**, porque los que eliminan células senescentes no saben
+distinguirlas de las sanas
+<SourcePopover ids={["src-escames-inflamacion-4"]} sources={frontmatter.sources} />.
+
+Ahí sitúa su hallazgo: la melatonina tendría un efecto **dual**, protegiendo la
+célula sana e induciendo la muerte de la senescente
+<SourcePopover ids={["src-escames-inflamacion-5"]} sources={frontmatter.sources} />.
+
+:::caution[En modelos experimentales]
+La propia Escames pone el freno: estos resultados son en cultivo y en ratones, y
+la traslación a clínica falla mucho más veces de las que acierta. *«Cuando leo
+que alguien ya va a curar un cáncer porque lo ha visto en ratones, no, no, no»*
+<SourcePopover ids={["src-escames-inflamacion-6"]} sources={frontmatter.sources} />.
+Nada de esto es una indicación para tomar melatonina como antiinflamatorio.
+:::
 
 ## Ver también
 
