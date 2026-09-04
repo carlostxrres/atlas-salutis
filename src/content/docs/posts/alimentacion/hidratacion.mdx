@@ -78,6 +78,26 @@ sources:
     personIds: [cristian-schurig]
     quote: "Mucha gente también peca de baja hidratación. Teniendo todas las pruebas superbien, puedo favorecer un episodio en un día como hoy en Málaga, a 40 grados, en el que no me hidraté bien."
     timestamp: "00:38:22"
+  - id: src-quiroga-hidratacion-1
+    interview: borja-bandera-entrevista-borja-quiroga
+    personIds: [borja-quiroga]
+    quote: "El riñón tiene capacidad para concentrar la orina más o menos hasta medio litro al día: es lo mínimo que tenemos que orinar para eliminar las toxinas que se producen en el día a día."
+    timestamp: "00:41:46"
+  - id: src-quiroga-hidratacion-2
+    interview: borja-bandera-entrevista-borja-quiroga
+    personIds: [borja-quiroga]
+    quote: "Eso no supone beber medio litro, supone beber bastante más, porque perdemos agua por la transpiración y al respirar. Más o menos litro y medio deberíamos intentar beber todos los días, contando que la fruta tiene mucha agua, las sopas, los cafés."
+    timestamp: "00:42:12"
+  - id: src-quiroga-hidratacion-3
+    interview: borja-bandera-entrevista-borja-quiroga
+    personIds: [borja-quiroga]
+    quote: "El riñón tiene una capacidad límite para diluir la orina, y a partir de ahí acumula agua dentro de los vasos sanguíneos y se genera hiponatremia. Ese límite son 20 litros."
+    timestamp: "00:42:28"
+  - id: src-quiroga-hidratacion-4
+    interview: borja-bandera-entrevista-borja-quiroga
+    personIds: [borja-quiroga]
+    quote: "Si sometes al riñón a deshidrataciones continuadas, aunque no se vea en la analítica, pierde la capacidad para concentrar la orina: de hecho es una de las primeras funciones que pierde el riñón."
+    timestamp: "00:43:31"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -194,6 +214,34 @@ deportivo, los geles y la cafeína. La consecuencia que describe es una arritmia
 <SourcePopover ids={["src-schurig-hidratacion-3"]} sources={frontmatter.sources} />.
 El cuadro completo está en
 [Riesgo cardíaco en el deporte](/posts/metabolismo/riesgo-cardiaco-en-el-deporte/).
+
+## Los dos límites del riñón
+
+Un nefrólogo pone cifras a lo que este post discute. Borja Quiroga parte de la
+función que casi nunca se nombra: el riñón **concentra y diluye**, y las dos
+capacidades tienen tope.
+
+**Por abajo**: puede concentrar la orina hasta unos **500 ml al día**, que es el
+mínimo que hay que orinar para eliminar las toxinas producidas en la jornada
+<SourcePopover ids={["src-quiroga-hidratacion-1"]} sources={frontmatter.sources} />.
+De ahí sale su recomendación, más modesta que las cifras que circulan: como se
+pierde agua por transpiración y respiración, hay que beber bastante más de ese
+medio litro —**alrededor de litro y medio**, contando fruta, sopas y cafés
+<SourcePopover ids={["src-quiroga-hidratacion-2"]} sources={frontmatter.sources} />.
+
+**Por arriba**: puede diluir hasta unos **20 litros diarios**; superarlo acumula
+agua en los vasos y produce hiponatremia
+<SourcePopover ids={["src-quiroga-hidratacion-3"]} sources={frontmatter.sources} />.
+Es una cifra prácticamente inalcanzable, así que el riesgo por exceso es
+anecdótico en la práctica.
+
+El aviso que sí importa es sobre el otro extremo, y no aparece en ninguna
+analítica: **las deshidrataciones repetidas hacen perder la capacidad de
+concentrar la orina**, y esa es una de las primeras funciones que el riñón
+pierde
+<SourcePopover ids={["src-quiroga-hidratacion-4"]} sources={frontmatter.sources} />.
+El resto de lo que hace el riñón está en
+[Salud renal](/posts/metabolismo/salud-renal/).
 
 ## Ver también
 
