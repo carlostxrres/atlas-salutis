@@ -193,6 +193,36 @@ sources:
     personIds: [eduard-estivill]
     quote: "Dos horas antes, intentar una comida ligera, muy importante para hacer el ayuno intermitente: lo haréis perfectamente, sin querer, con lo cual mantendréis el peso y no hará falta hacer dietas."
     timestamp: "01:15:11"
+  - id: src-abellan-ayuno-1
+    interview: borja-bandera-entrevista-jose-abellan-colesterol
+    personIds: [jose-abellan]
+    quote: "Si nosotros hacemos ayuno, durante algunas horas al día estamos dependiendo de nuestras reservas grasas, que se tienen que movilizar. Si tú tienes algo de reservas de grasa no se te eleva tanto el colesterol; si eres el típico delgado, casi fibrado, se te eleva el colesterol un montón."
+    timestamp: "00:29:33"
+  - id: src-abellan-ayuno-2
+    interview: borja-bandera-entrevista-jose-abellan-colesterol
+    personIds: [jose-abellan]
+    quote: "Si yo tengo reservas, tengo también muchas reservas de colesterol y de triglicéridos en mis órganos, y no tengo que movilizar tantas. Si no las tengo, mi hígado tiene que ponerse a trabajar a tope para sintetizar transportadores de colesterol con triglicéridos y distribuirlos a todo mi cuerpo."
+    timestamp: "00:30:13"
+  - id: src-abellan-ayuno-3
+    interview: borja-bandera-entrevista-jose-abellan-colesterol
+    personIds: [jose-abellan]
+    quote: "En pacientes con TCA y con anorexia se ve también el LDL bastante elevado: personas que hacen ayunos prácticamente toda su vida y que además tienen un porcentaje de grasa bajísimo. Misma fisiología, misma explicación."
+    timestamp: "00:32:15"
+  - id: src-abellan-ayuno-4
+    interview: borja-bandera-entrevista-jose-abellan-colesterol
+    personIds: [jose-abellan]
+    quote: "Por eso no me gustan tanto los ayunos prolongados. Me gusta mucho el ayuno intermitente, lo hago, me siento superbién, pero el ayuno eleva un poquito el colesterol. Cuando un paciente me dice «¿cuánto, todos los días de mi vida?», le digo: no lo hagas, hazlo dos o tres días a la semana."
+    timestamp: "00:32:36"
+  - id: src-abellan-ayuno-5
+    interview: borja-bandera-entrevista-jose-abellan-colesterol
+    personIds: [jose-abellan]
+    quote: "En medicina, tan importante es la exposición al factor de riesgo como el tiempo de exposición. Que tú todos los días estés con un colesterol elevado, a mí no me gusta."
+    timestamp: "00:33:00"
+  - id: src-abellan-ayuno-6
+    interview: borja-bandera-entrevista-jose-abellan-colesterol
+    personIds: [jose-abellan]
+    quote: "A personas que de forma aislada tengan un colesterol en 160 con este perfil —deportista, baja grasa corporal, hace ayunos, dieta cetogénica o low carb— les diría que prueben durante un par de semanas a no hacer ayuno intermitente, a comer carbohidratos, y que repitan la analítica a ver qué pasa."
+    timestamp: "00:33:22"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -401,6 +431,50 @@ Y una advertencia que rara vez se oye, y que encaja con el marco de la hormesis:
 oncológico —esa pérdida de tejido visible— tiene entre sus mecanismos un exceso
 de autofagia
 <SourcePopover ids={["src-hernandez-ayuno-2", "src-galancho-ayuno-7"]} sources={frontmatter.sources} />.
+
+### El ayuno diario eleva el LDL en quien tiene poca grasa
+
+José Abellán describe desde la consulta un perfil que se ha vuelto frecuente:
+persona sana, entrena, se cuida, buena composición corporal, y un LDL de 180 o
+200. Dice que es hoy la principal causa por la que le piden consulta privada, y
+que en la mayoría de los casos no hay causa genética detrás
+<SourcePopover ids={["src-abellan-ayuno-1"]} sources={frontmatter.sources} />.
+
+Su explicación fisiológica encaja con lo que este post viene diciendo sobre qué
+mide realmente una analítica. Una analítica de lípidos dice **cuánto colesterol
+va viajando por la sangre en ese momento**, no cuánto hay en el cuerpo. Durante
+el ayuno hay que movilizar reservas, y ahí aparece la asimetría: quien tiene
+algo de grasa tiene depósitos de triglicéridos y colesterol repartidos cerca de
+sus órganos, así que no exige tanto al hígado. Quien está muy magro no los
+tiene, y **el hígado tiene que fabricar transportadores a destajo** para
+distribuir energía por todo el cuerpo
+<SourcePopover ids={["src-abellan-ayuno-2"]} sources={frontmatter.sources} />.
+
+El resultado es contraintuitivo: a igualdad de todo lo demás, se le eleva más el
+colesterol al delgado y fibrado que a quien lleva algo de sobrepeso. La misma
+fisiología explica el LDL elevado que se ve en pacientes con trastorno de la
+conducta alimentaria y anorexia
+<SourcePopover ids={["src-abellan-ayuno-3"]} sources={frontmatter.sources} />.
+
+Los tres factores se suman: **ayuno prolongado + restricción de hidratos +
+porcentaje de grasa muy bajo**. Y si además hay más aporte dietético de grasa,
+más todavía.
+
+#### Qué hacer con eso
+
+Su recomendación no es abandonar el ayuno intermitente —lo practica él mismo—
+sino no hacerlo a diario: **dos o tres días a la semana**
+<SourcePopover ids={["src-abellan-ayuno-4"]} sources={frontmatter.sources} />.
+El razonamiento es de exposición acumulada: en medicina cuenta tanto el factor
+de riesgo como el tiempo que se pasa expuesto a él, y estar todos los días con
+el colesterol elevado es exposición continua
+<SourcePopover ids={["src-abellan-ayuno-5"]} sources={frontmatter.sources} />.
+
+Y da una prueba concreta para quien tenga ese perfil y ese LDL: **dos semanas
+sin ayuno intermitente y comiendo carbohidratos, y repetir la analítica**. Si la
+cifra baja, la causa era esa
+<SourcePopover ids={["src-abellan-ayuno-6"]} sources={frontmatter.sources} />.
+Salir del déficit ayuda por el mismo camino.
 
 ### Para quién no aporta nada
 
