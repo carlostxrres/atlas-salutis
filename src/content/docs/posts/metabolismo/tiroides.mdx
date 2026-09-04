@@ -1,0 +1,149 @@
+---
+title: Tiroides y nutrición
+description: Qué nutrientes necesita la tiroides para fabricar sus hormonas, por qué la sal yodada resuelve el problema principal y cuándo conviene lo contrario.
+tags: [hormonas, nutrición, biomarcadores]
+sources:
+  - id: src-zumaquero-tiroides-1
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "El esencial es el yodo, porque es el que se pega a los residuos de tirosina dentro de la tiroglobulina y van formando la mono, la di, que luego se unen para formar la T3 o la T4. Si no hay yodo, ya sabemos que hay bocio."
+    timestamp: "00:23:51"
+  - id: src-zumaquero-tiroides-2
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "Luego el hierro es muy importante, porque es cofactor de la peroxidasa tiroidea, que es la que construye esta hormona. Para mí esos dos me parecerían esenciales en la síntesis."
+    timestamp: "00:24:20"
+  - id: src-zumaquero-tiroides-3
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "El selenio lo que va a hacer es quitarle un yodo: la T4 tiene más vida útil en sangre pero no tanta potencia; luego llega al tejido y necesito quitarle el yodo para que se convierta en T3. Y ahí el cofactor es el selenio."
+    timestamp: "00:24:35"
+  - id: src-zumaquero-tiroides-4
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "El zinc es muy interesante porque, aparte de ayudar a las desyodasas, ayuda a una carboxipeptidasa que convierte la pre-TRH en TRH, la señal del hipotálamo a la hipófisis, y además forma parte de los receptores de T3."
+    timestamp: "00:24:51"
+  - id: src-zumaquero-tiroides-5
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "Luego hay otras vitaminas como la vitamina D, la B12 o la vitamina A, que serían también interesantes, pero no con tanta importancia."
+    timestamp: "00:25:15"
+  - id: src-zumaquero-tiroides-6
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "Con 3 gramos de sal yodada ya tienes la ingesta diaria recomendada de yodo, o sea que ni siquiera te estarías pasando de los gramos totales de sal máximos que dice la Organización Mundial de la Salud."
+    timestamp: "00:25:35"
+  - id: src-zumaquero-tiroides-7
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "La gente, por pereza, por precio y ahora también por pericia en la cocina, no suele comer mucho pescado y marisco. Yo trabajo en Segovia y te digo que la gente no come pescado en absoluto de forma regular."
+    timestamp: "00:25:47"
+  - id: src-zumaquero-tiroides-8
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "La sal yodada es buena, bonita y barata, es fácil de usar, nos va a aportar el yodo y no nos vamos a pasar en consumo total. La recomendaría en hipotiroidismo, incluso en Hashimoto, con un consumo normal de otras fuentes."
+    timestamp: "00:26:16"
+  - id: src-zumaquero-tiroides-9
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "¿Dónde no la recomendaría? Básicamente en enfermedad de Graves y cualquier hipertiroidismo, o en consumos muy altos de pescado, por ejemplo en población de costa, en Japón o Corea; o en personas que consumen algas."
+    timestamp: "00:26:47"
+  - id: src-zumaquero-tiroides-10
+    interview: borja-bandera-entrevista-pablo-zumaquero
+    personIds: [pablo-zumaquero]
+    quote: "Con las algas hay que tener cuidado, sobre todo con la kombu: la kombu tiene muchísimo yodo. La nori y el wakame tienen menos cantidad. Yo la recomendaría de forma esporádica."
+    timestamp: "00:27:19"
+---
+
+import SourcePopover from '@/components/SourcePopover.astro';
+
+La tiroides tiene una particularidad que la separa del resto de glándulas: **su
+hormona se fabrica literalmente con un mineral de la dieta**. Sin yodo no hay
+hormona tiroidea, y eso convierte un asunto de nutrición en un asunto endocrino.
+
+Pablo Zumaquero, dietista-nutricionista, recorre la cadena completa distinguiendo
+qué nutriente hace falta en cada paso.
+
+## Los cuatro que importan
+
+```d2
+direction: right
+
+yodo: yodo
+hierro: hierro
+selenio: selenio
+zinc: zinc
+
+yodo -> t4: se incorpora a la tiroglobulina
+hierro -> t4: cofactor de la peroxidasa tiroidea
+t4: T4 (reserva, poca potencia)
+t4 -> t3: desyodación {style.animated: true}
+selenio -> t3: cofactor de las desyodasas
+t3: T3 (activa)
+zinc -> t3: desyodasas y receptores de T3
+```
+
+**Yodo.** El insustituible: se une a los residuos de tirosina de la tiroglobulina
+y de ahí salen la T3 y la T4. Sin yodo aparece el bocio
+<SourcePopover ids={["src-zumaquero-tiroides-1"]} sources={frontmatter.sources} />.
+
+**Hierro.** Cofactor de la **peroxidasa tiroidea**, la enzima que construye la
+hormona. Junto al yodo, los dos que considera esenciales para la síntesis
+<SourcePopover ids={["src-zumaquero-tiroides-2"]} sources={frontmatter.sources} />.
+
+**Selenio.** Actúa en el paso siguiente, no en la fabricación. La T4 dura mucho
+en sangre pero tiene poca potencia; **para activarse hay que quitarle un yodo en
+el tejido** y convertirla en T3, y ahí el cofactor es el selenio
+<SourcePopover ids={["src-zumaquero-tiroides-3"]} sources={frontmatter.sources} />.
+
+**Zinc.** El menos citado y el que aparece en más sitios: ayuda a las
+desyodasas, interviene en la conversión de pre-TRH en TRH —la señal que va del
+hipotálamo a la hipófisis— y **forma parte de los propios receptores de T3**
+<SourcePopover ids={["src-zumaquero-tiroides-4"]} sources={frontmatter.sources} />.
+
+Vitamina D, B12 y vitamina A entran en la conversación, pero con un peso
+claramente menor
+<SourcePopover ids={["src-zumaquero-tiroides-5"]} sources={frontmatter.sources} />.
+
+## La sal yodada resuelve el problema principal
+
+La fuente natural de yodo es el pescado y el marisco, y ahí está el problema
+práctico: **la gente no come pescado de forma regular**. Zumaquero lo atribuye a
+pereza, precio y falta de destreza en la cocina, y contrasta la costa con el
+interior —trabajando en Segovia, dice no ver consumo habitual
+<SourcePopover ids={["src-zumaquero-tiroides-7"]} sources={frontmatter.sources} />.
+
+De ahí que su recomendación poblacional sea la más barata posible: **sal
+yodada**. Con **3 gramos** se cubre la ingesta diaria recomendada de yodo, una
+cantidad que además queda por debajo del máximo de sal que recomienda la OMS
+<SourcePopover ids={["src-zumaquero-tiroides-6"]} sources={frontmatter.sources} />.
+
+La mantiene incluso en **hipotiroidismo y en Hashimoto**, siempre que el consumo
+del resto de fuentes sea normal
+<SourcePopover ids={["src-zumaquero-tiroides-8"]} sources={frontmatter.sources} />.
+
+### Cuándo no
+
+El yodo es el ejemplo de nutriente con ventana estrecha: falta y exceso dan
+problemas. No recomendaría sal yodada
+<SourcePopover ids={["src-zumaquero-tiroides-9"]} sources={frontmatter.sources} />:
+
+- En **hipertiroidismo**, incluida la enfermedad de Graves.
+- En quien ya consume **mucho pescado** —población de costa, o dietas de tipo
+  japonés o coreano.
+- En consumidores habituales de **algas**.
+
+Sobre las algas concreta cuál preocupa: **la kombu tiene muchísimo yodo**,
+mientras que la nori y el wakame llevan bastante menos. Su criterio es
+consumirlas de forma esporádica, no como hábito diario por creer que son
+saludables
+<SourcePopover ids={["src-zumaquero-tiroides-10"]} sources={frontmatter.sources} />.
+
+## Ver también
+
+- Por qué el estrés crónico produce un hipotiroidismo funcional, en
+  [El nervio vago](/posts/habitos/nervio-vago/).
+- Cómo interpretar los valores de una analítica hormonal, en
+  [Cómo leer una analítica](/posts/metabolismo/como-leer-una-analitica/).
+- El otro marcador que casi siempre sale bajo, en
+  [Vitamina D](/posts/alimentacion/vitamina-d/).
