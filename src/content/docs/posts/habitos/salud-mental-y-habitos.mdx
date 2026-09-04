@@ -194,6 +194,26 @@ sources:
     personIds: [alejandro-martinez]
     quote: "Es verdad que hay mucha evidencia que lo dice, pero luego la práctica clínica real no es tan simple. Cuando el paciente está en ese punto de bloqueo, quizás hay que trazar un plan a medida: está en el punto A, vamos a llevarlo primero al punto B."
     timestamp: "00:22:08"
+  - id: src-acuna-mental-1
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [dario-acuna-castroviejo]
+    quote: "Hay una frase de un psiquiatra que se me quedó muy grabada: no hay trastorno psiquiátrico que no lleve aparejado un trastorno del sueño. Y muchos de los fármacos utilizados en psiquiatría producen insomnio, con lo cual se agrava más el proceso."
+    timestamp: "01:11:28"
+  - id: src-acuna-mental-2
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [dario-acuna-castroviejo]
+    quote: "La melatonina es una molécula que deriva de la serotonina. Se ha descrito que el receptor de serotonina forma un dímero con el receptor de melatonina, de forma que la melatonina tiene ese efecto ansiolítico y ese ligero efecto antidepresivo. No es un antidepresivo al uso, pero para pequeños componentes depresivos o de ansiedad puede ser suficiente."
+    timestamp: "01:12:03"
+  - id: src-acuna-mental-3
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [dario-acuna-castroviejo]
+    quote: "El síndrome afectivo estacional es un caso típico de cronodisrupción: a estos pacientes el pico de melatonina se les está produciendo cuatro o cinco horas más tarde de lo habitual a lo largo de todo el año. Administrando melatonina para hacer ese adelanto de fase, desaparece toda la sintomatología."
+    timestamp: "01:13:25"
+  - id: src-acuna-mental-4
+    interview: borja-bandera-entrevista-dario-acuna-castroviejo
+    personIds: [dario-acuna-castroviejo]
+    quote: "Esa persona que duerme mal se despierta, da vueltas, se levanta, me voy a ver la televisión un rato a ver si me duermo. Pero estoy sentado, tengo ganas de comer, voy al frigorífico y saco cosas. Eso genera obesidad, genera síndrome metabólico y diabetes tipo 2 a la larga."
+    timestamp: "01:09:35"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -477,6 +497,36 @@ ejecutar
 <SourcePopover ids={["src-amartinez-mental-4"]} sources={frontmatter.sources} />.
 Es exactamente el problema que trata
 [Adherencia y cambio de hábitos](/posts/habitos/adherencia-y-cambio-de-habitos/).
+
+## No hay trastorno psiquiátrico sin trastorno del sueño
+
+Darío Acuña cita una frase que recoge de un psiquiatra y que ordena todo el
+apartado anterior sobre el sueño como variable previa: **no hay trastorno
+psiquiátrico que no lleve aparejado un trastorno del sueño**. Y añade el bucle:
+muchos fármacos usados en psiquiatría producen insomnio, con lo que agravan el
+proceso que tratan
+<SourcePopover ids={["src-acuna-mental-1"]} sources={frontmatter.sources} />.
+
+El mecanismo que propone para el vínculo es bioquímico: la melatonina **deriva de
+la serotonina**, y sus receptores forman un **dímero** con los de serotonina. De
+ahí un efecto ansiolítico y un ligero efecto antidepresivo —con la matización
+que él mismo pone: **no es un antidepresivo al uso**, y solo llega para
+componentes leves
+<SourcePopover ids={["src-acuna-mental-2"]} sources={frontmatter.sources} />.
+
+El caso donde va más lejos es el **trastorno afectivo estacional**, que describe
+como cronodisrupción pura: el pico de melatonina de esos pacientes ocurre cuatro
+o cinco horas más tarde de lo debido durante todo el año, y con un adelanto de
+fase bien pautado la sintomatología desaparece
+<SourcePopover ids={["src-acuna-mental-3"]} sources={frontmatter.sources} />.
+Cómo se hace ese adelanto, en
+[Ritmos circadianos y cronotipos](/posts/sueno/ritmos-circadianos-y-cronotipos/).
+
+Y una observación de consulta que conecta el mal dormir con lo metabólico sin
+recurrir a la hormona: quien no duerme se levanta, se sienta ante la televisión
+y **acaba en el frigorífico**. Ese circuito, repetido, es el que produce
+obesidad y diabetes tipo 2
+<SourcePopover ids={["src-acuna-mental-4"]} sources={frontmatter.sources} />.
 
 ## Ver también
 
