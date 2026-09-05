@@ -148,6 +148,26 @@ sources:
     personIds: [cristian-schurig]
     quote: "Hay que adaptar el protocolo haciendo una transferencia de lo que hace el deportista: en cinta de correr, en bicicleta, hasta también en remo. En gente que hace crossfit, o luchadores, prefiero usar el air bike, que nos permite usar tren superior y tren inferior."
     timestamp: "00:05:57"
+  - id: src-martinez-tellez-esfuerzo-1
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Uno de los problemas que hay hoy con la tecnología de los wearables es que, al ser una caja negra, no sabemos los algoritmos que utilizan muchos de ellos."
+    timestamp: "01:28:44"
+  - id: src-martinez-tellez-esfuerzo-2
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Lo que estamos viendo es que si el volumen de oxígeno es bajo aciertas más. Si tienes un volumen de oxígeno de 60 o 70, fallan más."
+    timestamp: "01:28:22"
+  - id: src-martinez-tellez-esfuerzo-3
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Mi Garmin me dice que tengo un volumen de oxígeno de 54, y en el laboratorio tengo 60. Esos 6 o 7 mililitros por minuto y kilo que no me los quite nadie."
+    timestamp: "01:29:07"
+  - id: src-martinez-tellez-esfuerzo-4
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Se estima con frecuencia cardíaca, ritmo, edad, sexo; hay muchas ecuaciones relativas a eso. Cuanto más alto el volumen de oxígeno, más falla el error de la medida."
+    timestamp: "01:29:29"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -359,6 +379,29 @@ Lo que distingue una molestia de una señal cardíaca
 Las piernas cansadas y la respiración rápida y profunda proporcionadas al
 esfuerzo son fatiga normal, no alarma.
 
+## Qué fiabilidad tiene el VO2 max de tu reloj
+
+La cifra que da un reloj deportivo no se mide, se estima. Borja Martínez-Téllez
+señala el primer problema, que es de transparencia: los *wearables* son una
+**caja negra**, y en muchos de ellos no se conocen los algoritmos que usan
+<SourcePopover ids={["src-martinez-tellez-esfuerzo-1"]} sources={frontmatter.sources} />.
+Lo que sí se sabe es de qué parten: frecuencia cardíaca, ritmo, edad y sexo,
+combinados con ecuaciones de estimación
+<SourcePopover ids={["src-martinez-tellez-esfuerzo-4"]} sources={frontmatter.sources} />.
+
+Lo relevante es que **el error no se reparte por igual**. La estimación acierta
+razonablemente en valores bajos y **falla más cuanto más alto es el VO2 max
+real**
+<SourcePopover ids={["src-martinez-tellez-esfuerzo-2"]} sources={frontmatter.sources} />.
+Su propio caso lo ilustra: **54 según su Garmin, 60 medido en laboratorio**
+<SourcePopover ids={["src-martinez-tellez-esfuerzo-3"]} sources={frontmatter.sources} />.
+
+Puesto en contexto de este post, seis o siete unidades no son un detalle: son
+del orden de la mejora que se persigue con meses de entrenamiento, y suficientes
+para cambiar de categoría en las tablas de referencia. La conclusión práctica es
+usar el reloj para **seguir la tendencia propia**, no para conocer el valor
+absoluto ni para compararse con nadie.
+
 ## Ver también
 
 - Por qué el VO2 max predice mortalidad, en
@@ -367,3 +410,5 @@ esfuerzo son fatiga normal, no alarma.
   [Riesgo cardíaco en el deporte](/posts/metabolismo/riesgo-cardiaco-en-el-deporte/).
 - Qué otros marcadores mirar y con qué frecuencia, en
   [Cómo leer una analítica](/posts/metabolismo/como-leer-una-analitica/).
+- El intento de estimar el VO2 max desde la composición de las lipoproteínas, en
+  [Colesterol y riesgo cardiovascular](/posts/metabolismo/colesterol-y-riesgo-cardiovascular/).
