@@ -93,6 +93,26 @@ sources:
     personIds: [borja-bandera]
     quote: "Claro: no te has quitado el gluten, has empezado a comer bien."
     timestamp: "01:06:38"
+  - id: src-martinez-tellez-intolerancias-1
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "¿Cómo funciona la intolerancia a la fructosa? Parece ser que se saturan los receptores de la fructosa en los enterocitos, y sabemos que si tomas fructosa y glucosa la tolerancia es mejor. Pero ¿cuál es la causa? Hasta que no sepamos eso, no vamos a ver cómo tratarla."
+    timestamp: "00:28:40"
+  - id: src-martinez-tellez-intolerancias-2
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "El problema es cuando tú la dieta FODMAP la eternizas, la extiendes. Debería ser 8 o 12 semanas, no más, y la gente años."
+    timestamp: "01:19:29"
+  - id: src-martinez-tellez-intolerancias-3
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Lo que estamos viendo es que cuando tú te expones de una forma dosis-respuesta, con sentido, a esa fructosa, empiezas a tolerarla y a absorberla. Y con los carbohidratos en los deportistas estamos viendo lo mismo: cuanto más te expones, más aumenta tu capacidad de absorber y tolerar."
+    timestamp: "01:19:29"
+  - id: src-martinez-tellez-intolerancias-4
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Este es el gut training aplicado a la clínica. El modelo de rendimiento es un modelo de salud, y muchas veces nos podemos inspirar en él."
+    timestamp: "01:20:08"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -240,9 +260,48 @@ peso
 Es la razón por la que este post insiste en no retirar alimentos por cuenta
 propia: hacerlo antes de las pruebas las invalida.
 
+## Reexponerse en lugar de retirar para siempre
+
+El punto anterior tiene una continuación que Borja Martínez-Téllez desarrolla
+desde la fisiología del ejercicio, y es probablemente la corrección más útil de
+todo el post.
+
+Empieza reconociendo lo que no se sabe. De la intolerancia a la fructosa
+tenemos una idea del mecanismo —los receptores de fructosa del enterocito se
+saturan, y tomarla junto a glucosa mejora la tolerancia— pero **no se conoce la
+causa**, y sin causa no hay tratamiento dirigido
+<SourcePopover ids={["src-martinez-tellez-intolerancias-1"]} sources={frontmatter.sources} />.
+
+Lo que sí señala como error frecuente es lo que se hace mientras tanto. La
+**dieta FODMAP** es una herramienta con fecha de caducidad: debería durar entre
+**8 y 12 semanas**, y la gente la mantiene años
+<SourcePopover ids={["src-martinez-tellez-intolerancias-2"]} sources={frontmatter.sources} />.
+
+Porque la tolerancia funciona en la otra dirección: exponerse de forma
+**dosis-respuesta** y con criterio a la fructosa hace que se empiece a tolerar y
+a absorber. Y es exactamente lo mismo que se observa con los hidratos en
+deportistas —cuanto más te expones, más aumentas la capacidad de absorber y
+tolerar
+<SourcePopover ids={["src-martinez-tellez-intolerancias-3"]} sources={frontmatter.sources} />.
+
+Su formulación es que esto es **el *gut training* aplicado a la clínica**, y que
+el modelo de rendimiento sirve como modelo de salud
+<SourcePopover ids={["src-martinez-tellez-intolerancias-4"]} sources={frontmatter.sources} />.
+El protocolo está en
+[Comer para competir](/posts/alimentacion/comer-para-competir/).
+
+El fallo que describe al final es el que hace parecer confirmada la intolerancia:
+alguien que ha retirado un alimento durante años sale a cenar y se toma una
+tarta de tres chocolates. Le sienta fatal, y concluye que tenía razón. Pero es
+la misma reacción que tendría un corredor que nunca ha tomado geles y se mete
+180 g de glucosa en una hora. **La dosis y la progresión no eran las de una
+reexposición, sino las de una prueba imposible.**
+
 ## Ver también
 
 - Las pautas que hay que probar antes de sospechar de un alimento concreto, en
   [Salud digestiva y microbiota](/posts/alimentacion/salud-digestiva-y-microbiota/).
 - Por qué la obsesión con lo que se come puede ser el problema y no la
   solución, en [Salud mental y hábitos](/posts/habitos/salud-mental-y-habitos/).
+- Qué le pasa a la microbiota que metaboliza hidratos cuando se ayuna mucho, en
+  [Ayuno y carbohidratos](/posts/alimentacion/ayuno-y-carbohidratos/).
