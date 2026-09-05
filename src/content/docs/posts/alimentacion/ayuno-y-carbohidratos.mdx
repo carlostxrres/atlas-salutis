@@ -223,6 +223,31 @@ sources:
     personIds: [jose-abellan]
     quote: "A personas que de forma aislada tengan un colesterol en 160 con este perfil —deportista, baja grasa corporal, hace ayunos, dieta cetogénica o low carb— les diría que prueben durante un par de semanas a no hacer ayuno intermitente, a comer carbohidratos, y que repitan la analítica a ver qué pasa."
     timestamp: "00:33:22"
+  - id: src-martinez-tellez-ayuno-1
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "¿El ayuno altera la microbiota? Sí, es lo que más. Si sabemos que un fin de semana de cerveza la altera, imagínate que te metas a una restricción calórica de 24 horas: se produce un cambio muy rápido."
+    timestamp: "01:17:10"
+  - id: src-martinez-tellez-ayuno-2
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Se ven principalmente bacterias que consumen carbohidratos que tienden a desaparecer, y suelen aparecer bacterias más predominantes de consumo de ácidos grasos. Algunas proteolíticas también tienden a aumentar."
+    timestamp: "01:17:33"
+  - id: src-martinez-tellez-ayuno-3
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Hay clínicas que están haciendo ayunos terapéuticos y están empezando a estudiar qué tipo de comida hago en la reintroducción después del ayuno, porque no es lo mismo."
+    timestamp: "01:17:55"
+  - id: src-martinez-tellez-ayuno-4
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-martinez-tellez]
+    quote: "Cuando tú ayunas, y si lo haces frecuentemente, las bacterias que metabolizan carbohidratos van a bajar. Puede ser una de las justificaciones de que la persona que hace ayuno muy frecuentemente, cuando vuelve a reintroducir carbohidratos, se hincha, se distiende y tiene síntomas digestivos."
+    timestamp: "01:18:15"
+  - id: src-bandera-ayuno-mt1
+    interview: borja-bandera-entrevista-borja-martinez-tellez
+    personIds: [borja-bandera]
+    quote: "Bastante gente a la que los carbohidratos le distienden, y me refiero a carbohidratos sanos: frutas, verduras, legumbres, algo de patata y arroz. Les coge rechazo, y probablemente sea por periodos de restricción tan extendidos."
+    timestamp: "01:18:40"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -609,3 +634,47 @@ biológico, igual que la luz o la hora del ejercicio
 Comer siempre a horas distintas desajusta ese reloj aunque el cómputo calórico
 del día sea idéntico. El mecanismo completo, en
 [Ritmos circadianos y cronotipos](/posts/sueno/ritmos-circadianos-y-cronotipos/).
+
+## Lo que el ayuno le hace a la microbiota
+
+Hay un efecto del ayuno que casi no aparece en la conversación habitual, y que
+según Borja Martínez-Téllez es el más marcado de todos: **de todo lo que
+comemos y dejamos de comer, el ayuno es lo que más altera la microbiota**. Si
+un fin de semana de cervezas ya la cambia, una restricción de 24 horas produce
+un cambio muy rápido
+<SourcePopover ids={["src-martinez-tellez-ayuno-1"]} sources={frontmatter.sources} />.
+
+La dirección del cambio es coherente con lo que hay disponible para comer:
+
+| Tipo de bacteria | Qué le pasa al ayunar |
+|---|---|
+| Consumidoras de carbohidratos | Tienden a desaparecer |
+| Consumidoras de ácidos grasos | Pasan a ser predominantes |
+| Proteolíticas | Tienden a aumentar |
+
+<SourcePopover ids={["src-martinez-tellez-ayuno-2"]} sources={frontmatter.sources} />
+
+Esto ha abierto una línea de trabajo en las clínicas que hacen ayunos
+terapéuticos: **qué se come en la reintroducción**, porque el tipo de comida con
+el que se rompe el ayuno tiene un impacto diferencial en la recomposición y en
+la recuperación
+<SourcePopover ids={["src-martinez-tellez-ayuno-3"]} sources={frontmatter.sources} />.
+
+### De ahí sale la carbofobia
+
+La consecuencia práctica es la más interesante, porque explica un patrón que se
+suele atribuir a otra cosa. Si se ayuna con mucha frecuencia, las bacterias que
+metabolizan hidratos bajan. Cuando esa persona reintroduce carbohidratos, se
+**hincha, se distiende y tiene síntomas digestivos**
+<SourcePopover ids={["src-martinez-tellez-ayuno-4"]} sources={frontmatter.sources} />.
+
+La interpretación que hace entonces suele ser «los carbohidratos me sientan
+mal», y la conclusión, «tengo que hacer keto para siempre». El entrevistador dice
+verlo mucho en consulta, y con hidratos que no son ultraprocesados: **fruta,
+verdura, legumbre, patata y arroz**
+<SourcePopover ids={["src-bandera-ayuno-mt1"]} sources={frontmatter.sources} />.
+
+Lo que falta en ese razonamiento es que la microbiota **no está entrenada** para
+metabolizarlos después de periodos largos de restricción, y eso es reversible.
+La salida no es la retirada definitiva sino la reexposición progresiva, tratada
+en [Intolerancias alimentarias](/posts/alimentacion/intolerancias-alimentarias/).
