@@ -1,0 +1,55 @@
+diff --git a/libs/d2.ts b/libs/d2.ts
+index b8767c008f3331ca6dc712165637cf5286e10473..3ae1f1d46af9e4217d3fa286ce354bfe3b222e5c 100644
+--- a/libs/d2.ts
++++ b/libs/d2.ts
+@@ -13,6 +13,36 @@ const viewBoxRegex = /viewBox="\d+ \d+ (?<width>\d+) (?<height>\d+)"/
+ // When using D2.js, we cache the loaded fonts to avoid reading them for each diagram.
+ const jsFonts: Partial<Record<D2Font, Uint8Array>> = {}
+ 
++/**
++ * When using D2.js, a single D2 instance is shared across all diagrams.
++ *
++ * Every `new D2()` spawns a worker thread loading its own copy of the D2 WebAssembly build, and D2.js exposes no way to
++ * dispose of it, so instantiating one per diagram leaks a worker (hundreds of MB each) for the whole build. That is
++ * enough to get the build OOM-killed on memory-capped CI runners once a site has a few dozen diagrams.
++ */
++let jsD2: D2 | undefined
++
++/**
++ * Serializes work sent to the shared D2 instance.
++ *
++ * D2.js tracks only a single pending request per instance (`currentResolve`/`currentReject`), so concurrent calls on
++ * the same instance would resolve each other's promises. Diagrams are compiled concurrently, so each compile/render
++ * pair has to be queued.
++ */
++let jsD2Queue: Promise<unknown> = Promise.resolve()
++
++function useD2jsInstance<T>(task: (d2: D2) => Promise<T>): Promise<T> {
++  const result = jsD2Queue.then(() => {
++    jsD2 ??= new D2()
++    return task(jsD2)
++  })
++
++  // Keep the queue going even if a diagram fails to generate.
++  jsD2Queue = result.catch(() => undefined)
++
++  return result
++}
++
+ export async function isD2BinaryInstalled() {
+   try {
+     await getD2BinaryVersion()
+@@ -154,9 +184,10 @@ async function generateD2jsDiagram(
+       request.options.forceAppendix = true
+     }
+ 
+-    const d2 = new D2()
+-    const response = await d2.compile(request)
+-    const content = await d2.render(response.diagram, response.renderOptions)
++    const content = await useD2jsInstance(async (d2) => {
++      const response = await d2.compile(request)
++      return d2.render(response.diagram, response.renderOptions)
++    })
+ 
+     await fs.mkdir(path.dirname(outputPath), { recursive: true })
+     await fs.writeFile(outputPath, content)

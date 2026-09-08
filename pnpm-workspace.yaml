@@ -1,2 +1,4 @@
 allowBuilds:
   esbuild: true
+patchedDependencies:
+  astro-d2@0.13.1: patches/astro-d2@0.13.1.patch

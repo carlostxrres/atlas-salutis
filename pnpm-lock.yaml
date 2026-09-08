@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  astro-d2@0.13.1:
+    hash: a25594920d5ea785e82495c7f09776ef80dedfaf6cd0f429541f7477721b69ef
+    path: patches/astro-d2@0.13.1.patch
+
 importers:
 
   .:
@@ -74,7 +79,7 @@ importers:
         version: 0.9.10(prettier@3.9.6)(typescript@5.9.3)
       astro-d2:
         specifier: ^0.13.1
-        version: 0.13.1(astro@7.2.9(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
+        version: 0.13.1(patch_hash=a25594920d5ea785e82495c7f09776ef80dedfaf6cd0f429541f7477721b69ef)(astro@7.2.9(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0))
       tsx:
         specifier: ^4.23.12
         version: 4.23.12
@@ -4528,7 +4533,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-d2@0.13.1(astro@7.2.9(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)):
+  astro-d2@0.13.1(patch_hash=a25594920d5ea785e82495c7f09776ef80dedfaf6cd0f429541f7477721b69ef)(astro@7.2.9(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)):
     dependencies:
       '@terrastruct/d2': 0.1.33
       astro: 7.2.9(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(tsx@4.23.12)(yaml@2.9.0)
