@@ -1,45 +1,89 @@
 ---
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import { getCollection, getEntries } from 'astro:content';
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { getCollection, getEntries } from "astro:content";
+import InterviewMeta from "@/components/InterviewMeta";
+import { PersonGrid, type PersonSummary } from "@/components/PersonCard";
+import { getPersonPhoto } from "@/lib/people";
+import { getYouTubeVideoId, getYouTubeEmbedUrl } from "@/lib/youtube";
 
 export async function getStaticPaths() {
-  const interviews = await getCollection('interviews');
+  const interviews = await getCollection("interviews");
   return interviews.map((interview) => ({
     params: { interviewId: interview.id },
     props: { interview },
   }));
 }
 
+type PersonEntry = Awaited<ReturnType<typeof getEntries<"people">>>[number];
+
+// The compact card skips bio and post count, so there's no `getPostsForPerson()`
+// lookup to do here — see `PersonCard`.
+const toSummary = (person: PersonEntry): PersonSummary => ({
+  id: person.id,
+  name: person.data.name,
+  role: person.data.role,
+  profession: person.data.profession,
+  photo: getPersonPhoto(person.id),
+});
+
 const { interview } = Astro.props;
 const [interviewees, interviewers] = await Promise.all([
   getEntries(interview.data.interviewees),
   getEntries(interview.data.interviewers),
 ]);
+
+const { date, youtubeUrl } = interview.data;
+const dateISO = date.toISOString().slice(0, 10);
+const dateLabel = date.toLocaleDateString("es-ES", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+// `undefined` for placeholder urls (see `getYouTubeVideoId`), in which case we
+// keep the plain link rather than embedding a player that can't resolve.
+const videoId = getYouTubeVideoId(youtubeUrl);
 ---
 
-<StarlightPage frontmatter={{ title: interview.data.title, description: interview.data.summary, tableOfContents: false }}>
-  <p>
-    <strong>Canal:</strong> {interview.data.channel} ·
-    <strong>Fecha:</strong> {interview.data.date.toISOString().slice(0, 10)}
-    {interview.data.durationMinutes && <> · <strong>Duración:</strong> {interview.data.durationMinutes} min</>}
-  </p>
+<StarlightPage
+  frontmatter={{
+    title: interview.data.title,
+    description: interview.data.summary,
+    tableOfContents: false,
+  }}
+>
+  <InterviewMeta
+    channel={interview.data.channel}
+    dateLabel={dateLabel}
+    dateISO={dateISO}
+    durationMinutes={interview.data.durationMinutes}
+  />
 
-  <p><a href={interview.data.youtubeUrl}>Ver en YouTube</a></p>
-
-  <h2>Entrevistados/as</h2>
-  <ul>
-    {interviewees.map((person) => (
-      <li><a href={`/people/${person.id}/`}>{person.data.name}</a></li>
-    ))}
-  </ul>
-
-  <h2>Entrevistadores/as</h2>
-  <ul>
-    {interviewers.map((person) => (
-      <li><a href={`/people/${person.id}/`}>{person.data.name}</a></li>
-    ))}
-  </ul>
-
-  <h2>Resumen</h2>
   <p>{interview.data.summary}</p>
+
+  <div class="not-content">
+    <PersonGrid people={[...interviewers, ...interviewees].map(toSummary)} variant="compact" />
+  </div>
+  
+  {
+    videoId ? (
+      <div class="not-content">
+        <div class="border-border aspect-video w-full overflow-hidden rounded-lg border">
+          <iframe
+            class="size-full"
+            src={getYouTubeEmbedUrl(videoId)}
+            title={interview.data.title}
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          />
+        </div>
+      </div>
+    ) : (
+      <p>
+        <a href={youtubeUrl}>Ver en YouTube</a>
+      </p>
+    )
+  }
 </StarlightPage>
