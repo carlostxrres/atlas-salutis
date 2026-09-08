@@ -81,7 +81,8 @@ function InterviewCard({ interview }: { interview: InterviewSummary }) {
             <CardTitle className="text-base leading-snug">{interview.title}</CardTitle>
 
             <InterviewMeta
-              variant="inline"
+              size="sm"
+              className="my-0.5"
               channel={interview.channel}
               dateLabel={interview.dateLabel}
               dateISO={interview.date}
