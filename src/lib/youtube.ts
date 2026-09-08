@@ -33,3 +33,13 @@ export function getYouTubeVideoId(url: string): string | undefined {
 export function getYouTubeEmbedUrl(videoId: string): string {
   return `https://www.youtube-nocookie.com/embed/${videoId}`;
 }
+
+/**
+ * Thumbnail url for a video. `mqdefault` is the largest size YouTube
+ * guarantees for every video and the only small one that is a true 16:9
+ * (320×180) — `hqdefault` and `sddefault` are 4:3 and arrive letterboxed,
+ * and `maxresdefault` 404s on older uploads.
+ */
+export function getYouTubeThumbnailUrl(videoId: string): string {
+  return `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
+}
