@@ -23,7 +23,12 @@ const [posts, referenceCount, interviews] = await Promise.all([
 const interviewItems: LinkCardItem[] = interviews.map((interview) => ({
   href: `/interviews/${interview.id}/`,
   title: interview.data.title,
-  description: `${interview.data.channel} · ${interview.data.date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}`,
+  meta: {
+    channel: interview.data.channel,
+    dateISO: interview.data.date.toISOString().slice(0, 10),
+    dateLabel: interview.data.date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }),
+    durationMinutes: interview.data.durationMinutes,
+  },
 }));
 
 const postItems: LinkCardItem[] = posts.map((post) => ({

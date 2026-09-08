@@ -8,13 +8,17 @@ import { cn } from '@/lib/utils';
 // version that sits inside a card.
 export type InterviewMetaSize = 'default' | 'sm';
 
-export interface InterviewMetaProps {
+/** The data half, so callers can carry it around without the presentation props. */
+export interface InterviewMetaData {
   channel: string;
   /** Human-readable date, already localised by the caller (`es-ES`). */
   dateLabel: string;
   /** ISO `YYYY-MM-DD`, for the `<time datetime>` attribute. */
   dateISO: string;
   durationMinutes?: number;
+}
+
+export interface InterviewMetaProps extends InterviewMetaData {
   size?: InterviewMetaSize;
   className?: string;
 }
