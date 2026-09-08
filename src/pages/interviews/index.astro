@@ -3,6 +3,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { getCollection } from 'astro:content';
 import InterviewsSearch, { type InterviewSummary } from '@/components/InterviewsSearch';
 import { getYouTubeVideoId, getYouTubeThumbnailUrl } from '@/lib/youtube';
+import { formatInterviewDate } from '@/lib/interviews';
 import { excerpt } from '@/lib/utils';
 
 const interviews = await getCollection('interviews');
@@ -11,19 +12,15 @@ const summaries: InterviewSummary[] = interviews
     // `undefined` for placeholder urls, in which case the card falls back to
     // an icon tile instead of a broken image — see `getYouTubeVideoId`.
     const videoId = getYouTubeVideoId(interview.data.youtubeUrl);
+    // ISO doubles as the sort key below; `dateLabel` is what the card shows.
+    const { dateISO, dateLabel } = formatInterviewDate(interview.data.date);
 
     return {
       id: interview.id,
       title: interview.data.title,
       channel: interview.data.channel,
-      // ISO stays the sort key and the `<time datetime>` value; `dateLabel` is
-      // what the card actually shows.
-      date: interview.data.date.toISOString().slice(0, 10),
-      dateLabel: interview.data.date.toLocaleDateString('es-ES', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      }),
+      date: dateISO,
+      dateLabel,
       durationMinutes: interview.data.durationMinutes,
       thumbnail: videoId ? getYouTubeThumbnailUrl(videoId) : undefined,
       excerpt: excerpt(interview.data.summary),

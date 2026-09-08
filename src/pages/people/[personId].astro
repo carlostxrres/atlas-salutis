@@ -5,6 +5,7 @@ import { getPostsForPerson, getPersonReferenceCount, getInterviewsForPerson } fr
 import { getPersonPhoto } from '@/lib/people';
 import PersonProfileHeader from '@/components/PersonProfileHeader';
 import LinkCardList, { type LinkCardItem } from '@/components/LinkCardList';
+import { formatInterviewDate } from '@/lib/interviews';
 
 export async function getStaticPaths() {
   const people = await getCollection('people');
@@ -25,8 +26,7 @@ const interviewItems: LinkCardItem[] = interviews.map((interview) => ({
   title: interview.data.title,
   meta: {
     channel: interview.data.channel,
-    dateISO: interview.data.date.toISOString().slice(0, 10),
-    dateLabel: interview.data.date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }),
+    ...formatInterviewDate(interview.data.date),
     durationMinutes: interview.data.durationMinutes,
   },
 }));
