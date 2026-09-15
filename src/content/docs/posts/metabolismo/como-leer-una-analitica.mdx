@@ -58,6 +58,21 @@ sources:
     personIds: [antonio-mas]
     quote: "Por la mañana en ayunas no vale mirarlo, porque es cuando más alto está: si está alto puede ser por un estrés, porque ha dormido mal, y poco más."
     timestamp: "00:36:24"
+  - id: src-segarra-analitica-1
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "Con una analítica básica ya te dice muchas cosas: el hierro, la ferritina, la vitamina D —que la pidan, por favor—. La vitamina D no la ponen por rutina, pero puedes sugerírselo. El omega-3 sí que es complicado: habría que mirar el omega-3 eritrocitario y eso no se hace de rutina nunca."
+    timestamp: "00:33:30"
+  - id: src-segarra-analitica-2
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "Si el médico se toma 10 minutos y te hace una anamnesis, sale solo. Le pregunté a una persona cuántas veces a la semana comía pescado: ninguna, odiaba el pescado. Omega-3 de serie. Y era fototipo uno, huye del sol, antecedentes de cáncer de piel en la familia: déficit de vitamina D de manual, sin ver la analítica."
+    timestamp: "00:35:13"
+  - id: src-segarra-analitica-3
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "La referencia más desfasada es la vitamina D. Y en el colesterol habría que escarbar un poco más: te hacen el total y el HDL, y el otro es calculado. Lo importante sería que hicieran la lipoproteína."
+    timestamp: "00:36:46"
 ---
 
 import SourcePopover from '@/components/SourcePopover.astro';
@@ -132,6 +147,33 @@ simplemente estrés o una mala noche, y no permite concluir nada
 <SourcePopover ids={["src-mas-analitica-2"]} sources={frontmatter.sources} />.
 Qué pruebas sí sirven —orina de 24 horas, saliva nocturna, test de supresión—
 está en [Cortisol](/posts/metabolismo/cortisol/).
+
+## Qué pedir, y qué se puede saber sin pedir nada
+
+Al farmacéutico Sento Segarra le preguntan cómo sabe alguien si necesita
+suplementarse, y su respuesta va en dos direcciones. La primera es la analítica
+básica, con un añadido: **hierro, ferritina y vitamina D** —esta última no
+entra por rutina en la sanidad pública, pero se puede pedir—. Lo que no se va a
+conseguir es un omega-3 fiable: exige el **omega-3 eritrocitario**, que no se
+hace de rutina en ningún sitio
+<SourcePopover ids={["src-segarra-analitica-1"]} sources={frontmatter.sources} />.
+
+La segunda dirección es la que este post defiende desde el principio: el
+contexto vale tanto como el número. Su ejemplo es una persona conocida que le
+pidió «algún suplemento» en la farmacia; con dos preguntas —cuántas veces come
+pescado (ninguna), qué piel tiene (fototipo uno, huye del sol, antecedentes
+familiares de cáncer cutáneo)— tenía un déficit de omega-3 y otro de vitamina D
+«de manual», sin haber visto ningún resultado
+<SourcePopover ids={["src-segarra-analitica-2"]} sources={frontmatter.sources} />.
+Diez minutos de anamnesis, dice, resuelven más que un panel; el problema es que
+la consulta no los tiene.
+
+Sobre los rangos, su lista de desfasados es corta y coincide con la del resto
+del sitio: la **vitamina D** el primero —los tres criterios enfrentados están en
+[Vitamina D](/posts/alimentacion/vitamina-d/)— y el **colesterol** el segundo,
+porque el LDL del informe es un cálculo y la lipoproteína que cuenta partículas
+casi nunca se pide
+<SourcePopover ids={["src-segarra-analitica-3"]} sources={frontmatter.sources} />.
 
 ## Ver también
 
