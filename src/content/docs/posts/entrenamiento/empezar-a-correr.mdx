@@ -1,0 +1,124 @@
+---
+title: Empezar a correr
+description: Qué revisar antes del primer día, por qué la primera semana no se corre, cómo progresar del caminar al trote y por qué el que busca salud no debería mirar el reloj.
+tags: [ejercicio, hábitos, longevidad]
+sources:
+  - id: src-segarra-correr-1
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "Lo primero sería ir al cardiólogo: una prueba de esfuerzo sencillita, con el electro y la tensión mientras corres —no hace falta VO2 max ni nada de eso—, una analítica de sangre y un ecocardiograma. Si está todo correcto, vamos a empezar a correr. Pero no el primer día."
+    timestamp: "01:55:10"
+  - id: src-segarra-correr-2
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "Si tienes un poco de sobrepeso, las rodillas se van a castigar más. Empieza caminando: una semana caminando todos los días una hora. Luego el CaCo: una semana entera un minuto corriendo y cuatro caminando, durante 20 o 25 minutos. La segunda semana aumentas un minuto el correr y reduces uno el caminar."
+    timestamp: "01:55:52"
+  - id: src-segarra-correr-3
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "Semana a semana, de repente te vas a ver corriendo 25 o 30 minutos sin haberte dado cuenta. Lo puedes hacer a diario. Cuando ya te sientes cómodo vas aumentando el tiempo; tu cuerpo te lo va a ir diciendo."
+    timestamp: "01:56:13"
+  - id: src-segarra-correr-4
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "No haría una media maratón en los dos primeros años. Un 5K, un 10K, carreras que te dan chispa y que puedes correr despacito, a tu ritmo, sin agobios y sin querer nunca hacer marcas."
+    timestamp: "01:57:44"
+  - id: src-segarra-correr-5
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "Si lo que buscas con el running es salud, tienes que evitar picarte y correr más rápido. Yo podría correr más rápido, pero tendría que cambiar la técnica, hacer zancadas más largas, el impacto sería mayor y acabaría lesionado. El deporte de alta competición no es salud; si corres a seis, corres a seis."
+    timestamp: "01:59:49"
+  - id: src-segarra-correr-6
+    interview: sergio-begueria-entrevista-sento-segarra
+    personIds: [sento-segarra]
+    quote: "Con 49 años pesaba 15 kilos más y no hacía nada de ejercicio. No quería correr porque me podía fastidiar la rodilla: empecé a caminar, luego CaCo, aumentando y aumentando, y en dos años me vi corriendo una media maratón. Ahora corro unos 10 km casi todos los días y una tirada de 18 los domingos."
+    timestamp: "00:23:15"
+---
+
+import SourcePopover from '@/components/SourcePopover.astro';
+
+## Quién lo cuenta
+
+Sento Segarra es farmacéutico y empezó a correr a los 49 años con 15 kg de
+sobrepeso y una rodilla que no le dejaba levantarse del sofá. A los 60 corre
+unos 10 km casi a diario, una tirada de 18 los domingos y la maratón de Valencia
+cada diciembre en torno a 3h45. Su plan para quien empieza es el que él mismo
+siguió, y su primera regla fue no correr
+<SourcePopover ids={["src-segarra-correr-6"]} sources={frontmatter.sources} />.
+
+## Antes del primer día: el cardiólogo
+
+Su paso previo coincide con el cribado que la cardiología del deporte describe
+en [Riesgo cardíaco en el deporte](/posts/metabolismo/riesgo-cardiaco-en-el-deporte/):
+una **prueba de esfuerzo** sencilla —electrocardiograma y tensión mientras se
+corre, sin necesidad de medir gases ni VO2 max—, una **analítica** y un
+**ecocardiograma**. Si todo está bien, se empieza; pero no se empieza corriendo
+<SourcePopover ids={["src-segarra-correr-1"]} sources={frontmatter.sources} />.
+Qué mide cada prueba y cómo prepararla está en
+[La prueba de esfuerzo](/posts/metabolismo/la-prueba-de-esfuerzo/).
+
+## Primero caminar, después CaCo
+
+El motivo para no correr el primer día es doble: acabar harto y cansado, y las
+rodillas. Con sobrepeso —el caso más frecuente de quien empieza «para
+adelgazar»— el impacto castiga más, así que la progresión es esta:
+
+1. **Una semana caminando** una hora todos los días.
+2. **CaCo** (caminar-correr): una semana entera alternando **1 minuto corriendo
+   y 4 caminando**, durante 20-25 minutos.
+3. Cada semana, **un minuto más corriendo y uno menos caminando**.
+
+<SourcePopover ids={["src-segarra-correr-2"]} sources={frontmatter.sources} />
+
+```d2
+direction: right
+
+caminar: 1 semana caminando 1 h
+caco1: 1' correr / 4' caminar
+caco2: 2' / 3'
+caco3: 3' / 2'
+correr: 25-30' corriendo
+
+caminar -> caco1
+caco1 -> caco2: cada semana, +1' corriendo {style.animated: true}
+caco2 -> caco3
+caco3 -> correr
+```
+
+Al cabo de unas semanas, dice, uno se ve corriendo 25-30 minutos seguidos sin
+haberse dado cuenta, y a partir de ahí el tiempo se sube según lo pida el
+cuerpo. Se puede hacer a diario
+<SourcePopover ids={["src-segarra-correr-3"]} sources={frontmatter.sources} />.
+La aritmética de empezar pequeño y sumar es la misma que defiende Corral en
+[Adherencia y cambio de hábitos](/posts/habitos/adherencia-y-cambio-de-habitos/).
+
+## Qué carreras, y cuándo
+
+Las carreras populares sirven como motor —«te dan chispa»— siempre que se corran
+despacio y a ritmo propio. Su calendario: **5K y 10K los dos primeros años; la
+media maratón, no** antes de ese plazo
+<SourcePopover ids={["src-segarra-correr-4"]} sources={frontmatter.sources} />.
+
+## El reloj es el enemigo
+
+El punto en el que más insiste es el que más cuesta a quien empieza con
+cualquier deporte: si el objetivo es salud, **no picarse con el tiempo**. Su
+razonamiento es mecánico: correr más rápido exige otra técnica y zancadas más
+largas, más impacto, y con ello más probabilidad de lesión. Él podría bajar sus
+tiempos y elige no hacerlo, porque su meta es seguir corriendo maratones a los
+70, no bajar de 3h40. «Si corres a seis, corres a seis»
+<SourcePopover ids={["src-segarra-correr-5"]} sources={frontmatter.sources} />.
+Su distinción es la misma que separa este sitio del rendimiento deportivo: la
+alta competición machaca el cuerpo porque no hay otra forma de rendir, y eso no
+es salud. La versión de la misma idea para la carga semanal está en
+[Carga de entrenamiento y recuperación](/posts/entrenamiento/carga-de-entrenamiento-y-recuperacion/).
+
+## Ver también
+
+- Qué comer y beber en tiradas largas, en
+  [Comer para competir](/posts/alimentacion/comer-para-competir/) y
+  [Hidratación](/posts/alimentacion/hidratacion/).
+- Por qué la actividad diaria cuenta aunque no sea deporte, en
+  [Sedentarismo y actividad cotidiana](/posts/entrenamiento/sedentarismo-y-actividad-cotidiana/).
+- Qué hace el ejercicio por la esperanza de vida, en
+  [Longevidad y ejercicio](/posts/entrenamiento/longevidad-y-ejercicio/).
